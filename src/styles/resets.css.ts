@@ -45,3 +45,10 @@ globalStyle("img, picture", {
 globalStyle("input, button, textarea, select", {
   font: "inherit"
 })
+
+// Remove list styles (bullets/numbers)
+globalStyle("ul, ol", {
+  listStyle: "none",
+  padding: 0,
+  margin: 0
+})

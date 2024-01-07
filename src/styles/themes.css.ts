@@ -13,7 +13,7 @@ export const root = createGlobalTheme(":root", {
     complementary: twColors.black,
     brand: twColors.pink[800],
     brandLight: twColors.pink[400],
-    brandDark: twColors.pink[700],
+    brandDark: twColors.pink[600],
     semiTransparent: "#ffffff36",
     transparent: "transparent",
 
