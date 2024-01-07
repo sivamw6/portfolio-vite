@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <hr/>
-      <p className="text-center m-5" >- MavisWang &copy; {currentYear} -</p>
+      <p className={styles.p}>- MavisWang &copy; {currentYear} -</p>
     </footer>
   )
 }

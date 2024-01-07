@@ -3,11 +3,9 @@ import { vars } from '../../styles/themes.css';
 
 export const nav = style({
   backgroundColor: vars.colors.semiTransparent,
-  color: vars.colors.complementary,
-  height: '70vh',
+  height: '75vh',
   marginLeft : '20px',
   position: 'fixed',
-  padding: '10px',
   width: '120px',
   boxShadow: vars.shadow['4x'],
 });
@@ -17,16 +15,19 @@ export const externalLink = style({
   bottom: '25px',
   left: '50%',
   transform: 'translateX(-50%)',
-  color: vars.colors.grey500,
+  color: vars.colors.grey600,
   fontSize: vars.space['4x'],
 })
 
 export const pagesLink = style({
   position: 'absolute',
+  marginLeft: 'auto',
+  width: '100%',
+  textAlign: 'center',
   top: '40%',
   left: '50%',
   transform: 'translateX(-50%) translateY(-50%)',
-  color: vars.colors.grey500,
+  color: vars.colors.complementary,
   fontSize: '20px',
 })
 
@@ -42,6 +43,6 @@ export const navLink = style({
 })
 
 export const pagesLi = style({
-  padding: vars.space['1x'],
+  paddingTop: vars.space['3x'],
 
 })
