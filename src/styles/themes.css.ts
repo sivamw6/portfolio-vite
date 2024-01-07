@@ -14,7 +14,7 @@ export const root = createGlobalTheme(":root", {
     brand: twColors.pink[800],
     brandLight: twColors.pink[400],
     brandDark: twColors.pink[700],
-    semiTransparent: "#ffffff70",
+    semiTransparent: "#ffffff36",
     transparent: "transparent",
 
     // Color tokens
@@ -57,7 +57,25 @@ export const root = createGlobalTheme(":root", {
   slideToBottom : keyframes({
     'from': { bottom: '-40px' },
     'to': { bottom: '0' }
-  })
+  }),
+  shadow : {
+    '1x': '0 0 4px 0 rgba(0, 0, 0, 0.2)',
+    '2x': '0 0 8px 0 rgba(0, 0, 0, 0.2)',
+    '3x': '0 0 16px 0 rgba(0, 0, 0, 0.2)',
+    '4x': '0 0 24px 0 rgba(0, 0, 0, 0.2)',
+    '5x': '0 0 32px 0 rgba(0, 0, 0, 0.2)',
+    '6x': '0 0 40px 0 rgba(0, 0, 0, 0.2)',
+    '7x': '0 0 48px 0 rgba(0, 0, 0, 0.2)',  
+  },
+  borderRadius : {
+    '1x': '4px',
+    '2x': '8px',
+    '3x': '12px',
+    '4x': '16px',
+    '5x': '20px',
+    '6x': '24px',
+    '7x': '28px',
+  } 
 })
 
 export const vars = { ...root };
