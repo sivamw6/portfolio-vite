@@ -1,7 +1,56 @@
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+          <div>Contact</div>
+
+    </div>
   )
 }
 

@@ -1,8 +1,6 @@
 // Import libraries
-import {
-  Routes,
-  Route
-} from 'react-router-dom'
+import { useRef } from 'react'
+import { Routes, Route } from 'react-router-dom'
 
 import Layout from './components/layout/Layout.jsx'
 import Home from './pages/Home.jsx'
@@ -12,14 +10,40 @@ import Contact from './pages/Contact.jsx'
 
 function App() {
 
+    // Create references for each section
+    const home = useRef(null);
+    const about = useRef(null);
+    const projects = useRef(null);
+    const contact = useRef(null);
+    const mainPage = (
+      <>
+        <div ref={home}>
+          <Home />
+        </div>
+        <div ref={about}>
+          <About />
+        </div>
+        <div ref={projects}>
+          <Projects />
+        </div>
+        <div ref={contact}>
+          <Contact />
+        </div>
+      </>
+    );
+
   return (
     <div className='app'>
       <Routes>
-        <Route path='/' element={<Layout />} >
-          <Route index element={<Home />} />
-          <Route path='about' element={<About/>} />
-          <Route path='projects' element={<Projects />} />
-          <Route path='contact' element={<Contact />} />
+        <Route path='/' element={<Layout 
+              home={home} 
+              about={about} 
+              projects={projects} 
+              contact={contact} />} >
+          <Route index element={mainPage} />
+          <Route path='about' element={mainPage} />
+          <Route path='projects' element={mainPage} />
+          <Route path='contact' element={mainPage} />
         </Route>
       </Routes>
     </div>
