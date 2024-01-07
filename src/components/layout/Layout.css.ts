@@ -3,16 +3,17 @@ import { vars } from "../../styles/themes.css";
 
 export const app = style({
   fontFamily: vars.fonts.body,
-  backgroundColor: vars.colors.primary,
   display: "flex",
   flexDirection: "column",
   minHeight: "100dvh",
+  backgroundColor: 'var(--primary-color, defaultColor)',
+
 })
 
 export const app2 = style({
   display: "flex",
   flexDirection: "row",
-  flex: 1
+  flex: 1,
 })
 
 export const appContent = style({

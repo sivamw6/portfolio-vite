@@ -4,7 +4,7 @@ import { vars } from '../../styles/themes.css';
 export const nav = style({
   backgroundColor: vars.colors.semiTransparent,
   color: vars.colors.complementary,
-  height: '80vh',
+  height: '70vh',
   marginLeft : '20px',
   position: 'fixed',
   padding: '10px',
