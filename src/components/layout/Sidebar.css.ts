@@ -10,39 +10,36 @@ export const nav = style({
   boxShadow: vars.shadow['4x'],
 });
 
-export const externalLink = style({
-  position: 'absolute',
-  bottom: '25px',
-  left: '50%',
-  transform: 'translateX(-50%)',
-  color: vars.colors.grey600,
-  fontSize: vars.space['4x'],
-})
-
-export const pagesLink = style({
+export const linkContainer = style({
   position: 'absolute',
   marginLeft: 'auto',
   width: '100%',
   textAlign: 'center',
-  top: '40%',
-  left: '50%',
-  transform: 'translateX(-50%) translateY(-50%)',
   color: vars.colors.complementary,
   fontSize: '20px',
-})
+});
 
-export const a = style({
-  ':hover': {
-    color: vars.colors.brandDark,
-  }
-})
-export const navLink = style({
-  ':hover': {
-    color: vars.colors.brandDark,
-  }
-})
-
-export const pagesLi = style({
+export const linkStyle = style({
   paddingTop: vars.space['3x'],
+  ':hover': {
+    color: vars.colors.brandDark,
+  }
+});
 
-})
+export const externalLinkContainer = style({
+  bottom: '25px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  fontSize: vars.space['4x'],
+});
+
+export const pagesLink = style({
+  top: '40%',
+  transform: 'translateY(-50%)',
+});
+
+
+export const activeLinkStyle = style({
+  borderLeft: 'pink 5px solid',
+
+});

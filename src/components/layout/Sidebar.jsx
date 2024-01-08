@@ -28,7 +28,7 @@ function Sidebar({ home, about, projects, contact }) {
   useEffect(() => {
     const handleScroll = debounce(() => {
       if (window.scrollY < about.current.offsetTop) {
-        window.history.replaceState(null, null, '/home');
+        window.history.replaceState(null, null, '/');
       } else if (window.scrollY < projects.current.offsetTop) {
         window.history.replaceState(null, null, '/about');
       } else if (window.scrollY < contact.current.offsetTop) {
@@ -47,7 +47,7 @@ function Sidebar({ home, about, projects, contact }) {
 
   // Scroll to the correct section when URL changes
   useEffect(() => {
-    if (location.pathname === '/home') {
+    if (location.pathname === '/') {
       scrollToSection(home);
     } else if (location.pathname === '/about') {
       scrollToSection(about);
@@ -59,29 +59,36 @@ function Sidebar({ home, about, projects, contact }) {
     // Add dependencies to the dependency array
   }, [location, home, about, projects, contact, scrollToSection]); 
 
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <div>
       <nav className={styles.nav}>
-        <ul className={styles.pagesLink}>
-          <li className={styles.pagesLi}>
-          <Link to='/' className={styles.navLink} onClick={() => scrollToSection("/home")}>Home</Link>
+      <ul className={`${styles.linkContainer} ${styles.pagesLink}`}>
+          <li className={`${styles.linkStyle} ${isActive('/') ? styles.activeLinkStyle : ''}`}>
+            <Link to='/' onClick={() => scrollToSection("/")}>Home</Link>
           </li>
-          <li className={styles.pagesLi}>
-          <Link to='/about' className={styles.navLink} onClick={() => scrollToSection("/about")}>About</Link>
+          <li className={`${styles.linkStyle} ${isActive('/about') ? styles.activeLinkStyle : ''}`}>
+            <Link to='/about' onClick={() => scrollToSection("/about")}>About</Link>
           </li>
-          <li className={styles.pagesLi}>
-          <Link to='/projects' className={styles.navLink} onClick={() => scrollToSection("/projects")}>Projects</Link>
+          <li className={`${styles.linkStyle} ${isActive('/projects') ? styles.activeLinkStyle : ''}`}>
+            <Link to='/projects' onClick={() => scrollToSection("/projects")}>Projects</Link>
           </li>
-          <li className={styles.pagesLi}>
-          <Link to='/contact' className={styles.navLink} onClick={() => scrollToSection("/contact")}>Contact</Link>
+          <li className={`${styles.linkStyle} ${isActive('/contact') ? styles.activeLinkStyle : ''}`}>
+            <Link to='/contact' onClick={() => scrollToSection("/contact")}>Contact</Link>
           </li>
-        </ul>
-        <ul className={styles.externalLink}>
+        </ul>        <ul className={`${styles.linkContainer} ${styles.externalLinkContainer}`}>
           <li>
-            <a className={styles.a} target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mavis-wang-64019b277/"><FontAwesomeIcon icon={faLinkedin} /></a>
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mavis-wang-64019b277/">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
           </li>
           <li>
-          <a className={styles.a} target="_blank" rel="noreferrer" href="https://github.com/sivamw6"><FontAwesomeIcon icon={faGithub} /></a>
+            <a target="_blank" rel="noreferrer" href="https://github.com/sivamw6">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
           </li>
         </ul>
       </nav>
