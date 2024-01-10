@@ -31,8 +31,15 @@ export const circle = style({
   width: '400px',
   height: '400px',
   borderRadius: '50%',
+
   backgroundColor: 'var(--primary-color, defaultColor)',
   zIndex: 1,
+  filter: 'blur(3px)',
+  transition: 'filter 0.5s ease-in-out',
+  ":hover": {
+    filter: 'blur(0px)'
+  }
+
 });
 
 export const circleBefore = style({
