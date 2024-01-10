@@ -48,8 +48,6 @@ export const circleBefore = style({
 });
 
 
-
-
 export const img = style({
   position: 'absolute',
   width: '400px',
@@ -60,11 +58,11 @@ export const img = style({
 });
 
 export const text = style({
-  textAlign: 'center', // or 'left', depending on your preference
+  textAlign: 'center',
   color: vars.colors.complementary  ,
   padding: '20px',
   margin: '0 auto',
-  maxWidth: '600px', // keeps lines of text at a readable length
+  maxWidth: '600px', 
   '@media': {
     'screen and (max-width: 600px)': {
       padding: '10px',
