@@ -16,6 +16,7 @@ export const home = style({
   height: '80vh',
   marginLeft: '-180px',
   backgroundColor: vars.colors.primary,
+  minWidth: '80vw',
 })
 
 export const content = style({
@@ -70,6 +71,9 @@ export const img = style({
 });
 
 export const text = style({
+  position: 'absolute',
+  top: '30vh',
+  left: '25vw',
   textAlign: 'center',
   color: vars.colors.complementary  ,
   padding: '20px',

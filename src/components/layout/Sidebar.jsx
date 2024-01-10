@@ -72,7 +72,7 @@ function Sidebar({ home, about, projects, contact }) {
   return (
     <div>
       <nav className={styles.nav}>
-      <ul className={`${styles.linkContainer} ${styles.pagesLink}`}>
+        <ul className={`${styles.linkContainer} ${styles.pagesLink}`}>
           <li className={`${styles.linkStyle} ${isActive('/') ? styles.activeLinkStyle : ''}`}>
             <Link to='/' onClick={() => scrollToSection("/")}>Home</Link>
           </li>

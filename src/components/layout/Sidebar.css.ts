@@ -9,6 +9,7 @@ export const nav = style({
   width: '120px',
   boxShadow: vars.shadow['4x'],
   zIndex: 1,
+  textTransform: 'uppercase',
 });
 
 export const linkContainer = style({
@@ -17,7 +18,7 @@ export const linkContainer = style({
   width: '100%',
   textAlign: 'center',
   color: vars.colors.complementary,
-  fontSize: '20px',
+  fontSize: vars.space['2x'],
 });
 
 export const linkStyle = style({

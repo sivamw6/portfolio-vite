@@ -7,6 +7,7 @@ export const app = style({
   flexDirection: "column",
   minHeight: "100dvh",
   backgroundColor: 'var(--primary-color, defaultColor)',
+  minWidth: '100vw',
 })
 
 export const app2 = style({

@@ -1,5 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
 
+
 // Box-sizing rules
 globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",
