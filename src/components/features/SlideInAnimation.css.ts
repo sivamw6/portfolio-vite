@@ -3,7 +3,7 @@ import { style, keyframes } from '@vanilla-extract/css';
 const slideInAnimation = keyframes({
   from: {
     opacity: 0,
-    transform: 'translateY(20%)',
+    transform: 'translateY(40%)',
   },
   to: {
     opacity: 1,
@@ -13,7 +13,7 @@ const slideInAnimation = keyframes({
 
 export const slideIn = style({
   opacity: 0,
-  transform: 'translateY(20%)',
+  transform: 'translateY(40%)',
   transition: 'all 1s ease-out',
 });
 

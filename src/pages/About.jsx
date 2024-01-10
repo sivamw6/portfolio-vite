@@ -36,6 +36,17 @@ function About() {
           </p>
         </div>
       </SlideInAnimation>
+      <SlideInAnimation>
+        <div className={styles.content4}>
+          <p className={styles.p}>
+            Whether it&apos;s building a simple landing page or a complex web
+            application, I love the challenge of bringing ideas to life and
+            making them accessible to users across the web. In my spare time,
+            you can find me exploring new technologies and keeping up with the
+            latest trends in web development.
+          </p>
+        </div>
+      </SlideInAnimation>
     </div>
   )
 }

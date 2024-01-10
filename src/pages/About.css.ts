@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '../styles/themes.css'; 
 
 export const about = style({
-  width: '1100px',
+  width: '1200px',
   height: '100%',
   backgroundColor: vars.colors.primary,
 })
@@ -36,6 +36,17 @@ export const content3 = style({
   boxShadow: vars.shadow['2x'],
 
 })
+
+export const content4 = style({
+  width: '30vw',
+  height: '100%',
+  display: 'flex',
+  borderRadius: '10px',
+  marginLeft: '45%',
+  boxShadow: vars.shadow['2x'],
+
+})
+
 
 export const p = style({
   textAlign: 'left',

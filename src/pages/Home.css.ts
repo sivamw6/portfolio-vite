@@ -12,11 +12,10 @@ const fadeIn = keyframes({
 });
 
 export const home = style({
-  width: '1280px',
-  height: '80vh',
+  width: '1380px',
+  height: '90vh',
   marginLeft: '-180px',
   backgroundColor: vars.colors.primary,
-  minWidth: '80vw',
 })
 
 export const content = style({
