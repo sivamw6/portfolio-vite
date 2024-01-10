@@ -6,6 +6,11 @@ const ripple = keyframes({
   '100%': { transform: 'scale(1.2)', opacity: 0 },
 });
 
+const fadeIn = keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+});
+
 export const home = style({
   width: '90vw',
   height: '80vh',
@@ -42,17 +47,7 @@ export const circleBefore = style({
   zIndex: -1,
 });
 
-export const circleAfter = style({
-  content: '""',
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-  borderRadius: '50%',
-  transform: 'translate(-50%, -50%)',
-  backgroundColor: 'inherit',
-  animation: `${ripple} 3s linear infinite 1.5s`,
-  zIndex: -1,
-});
+
 
 
 export const img = style({
@@ -62,4 +57,21 @@ export const img = style({
   borderRadius: '50%',
   objectFit: 'cover',
   zIndex: 2,
+});
+
+export const text = style({
+  textAlign: 'center', // or 'left', depending on your preference
+  color: vars.colors.complementary  ,
+  padding: '20px',
+  margin: '0 auto',
+  maxWidth: '600px', // keeps lines of text at a readable length
+  '@media': {
+    'screen and (max-width: 600px)': {
+      padding: '10px',
+      fontSize: '90%',
+    },
+  },
+  opacity: "0",
+  animation: `${fadeIn} 2s ease forwards`,
+  animationDelay: '1s', 
 });
