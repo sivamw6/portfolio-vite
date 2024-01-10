@@ -1,15 +1,6 @@
-import { style, keyframes } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
-const slideInAnimation = keyframes({
-  from: {
-    opacity: 0,
-    transform: 'translateY(40%)',
-  },
-  to: {
-    opacity: 1,
-    transform: 'translateY(0%)',
-  },
-});
+
 
 export const slideIn = style({
   opacity: 0,

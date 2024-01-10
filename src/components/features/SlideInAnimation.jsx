@@ -1,4 +1,4 @@
-import  { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as styles from './slideInAnimation.css'; // Adjust the path as needed
 
 const SlideInAnimation = ({ children }) => {
@@ -6,6 +6,9 @@ const SlideInAnimation = ({ children }) => {
   const slideInRef = useRef(null);
 
   useEffect(() => {
+    // Capture the current value of the ref in a variable
+    const currentRef = slideInRef.current;
+    
     const slideInObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -15,16 +18,17 @@ const SlideInAnimation = ({ children }) => {
       { threshold: 0.5 }
     );
 
-    if (slideInRef.current) {
-      slideInObserver.observe(slideInRef.current);
+    if (currentRef) {
+      slideInObserver.observe(currentRef);
     }
 
     return () => {
-      if (slideInRef.current) {
+      // Use the captured value in the cleanup function
+      if (currentRef) {
         slideInObserver.disconnect();
       }
     };
-  }, []);
+  }, []); // Dependencies array is empty, so this effect runs once on mount and once on unmount
 
   return (
     <div
