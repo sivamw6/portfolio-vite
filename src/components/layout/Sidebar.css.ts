@@ -25,7 +25,7 @@ export const linkStyle = style({
   paddingTop: vars.space['2x'],
   paddingBottom: vars.space['2x'],
   ':hover': {
-    color:' var(--primary-color, defaultColor)',
+    fontWeight: 'bold',
   },
    boxShadow: 'none',
   transition: 'box-shadow 0.5s ease-in-out',

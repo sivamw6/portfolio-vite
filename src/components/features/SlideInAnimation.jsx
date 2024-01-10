@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import styles from './SlideInAnimation.css';
+import  { useEffect, useRef, useState } from 'react';
+import * as styles from './slideInAnimation.css'; // Adjust the path as needed
 
 const SlideInAnimation = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,20 +9,20 @@ const SlideInAnimation = ({ children }) => {
     const slideInObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          } else {
-            setIsVisible(false);
-          }
+          setIsVisible(entry.isIntersecting);
         });
       },
       { threshold: 0.5 }
     );
 
-    slideInObserver.observe(slideInRef.current);
+    if (slideInRef.current) {
+      slideInObserver.observe(slideInRef.current);
+    }
 
     return () => {
-      slideInObserver.disconnect();
+      if (slideInRef.current) {
+        slideInObserver.disconnect();
+      }
     };
   }, []);
 

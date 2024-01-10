@@ -27,7 +27,7 @@ function Home() {
         </div>        
         <div className={styles.text}>
         <h1 className={styles.letterAnimation}>
-          {createLetterSpans("Hi, I'm Mavis", 0)}
+          {createLetterSpans("Hi, I'm Mavis", 1)}
         </h1>
         <p className={styles.letterAnimation}>
           {createLetterSpans("I'm a Web developer", 2)} {/* 2s delay for second line */}

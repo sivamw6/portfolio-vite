@@ -12,7 +12,7 @@ const fadeIn = keyframes({
 });
 
 export const home = style({
-  width: '90vw',
+  width: '1280px',
   height: '80vh',
   marginLeft: '-180px',
   backgroundColor: vars.colors.primary,
@@ -34,7 +34,6 @@ export const circle = style({
   borderRadius: '50%',
 
   backgroundColor: 'var(--primary-color, defaultColor)',
-  zIndex: 1,
   filter: 'blur(3px)',
   transition: 'filter 0.5s ease-in-out',
   ":hover": {
@@ -52,7 +51,6 @@ export const circleBefore = style({
   transform: 'translate(-50%, -50%)',
   backgroundColor: 'inherit',
   animation: `${ripple} 3s linear infinite`,
-  zIndex: -1,
 });
 
 
@@ -62,7 +60,6 @@ export const img = style({
   height: '400px',
   borderRadius: '50%',
   objectFit: 'cover',
-  zIndex: 2,
   filter: 'blur(8px)',
   transition: 'filter 0.8s ease-in-out',
   ":hover": {
