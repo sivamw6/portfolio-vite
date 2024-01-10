@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import * as styles from './slideInAnimation.css'; // Adjust the path as needed
+import * as styles from './SlideInAnimation.css'; // Adjust the path as needed
 
 const SlideInAnimation = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
