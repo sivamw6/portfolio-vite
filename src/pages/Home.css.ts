@@ -1,5 +1,10 @@
-import { style } from '@vanilla-extract/css';
+import { style, keyframes } from '@vanilla-extract/css';
 import { vars } from '../styles/themes.css'; 
+
+const ripple = keyframes({
+  '0%': { transform: 'scale(0.8)', opacity: 1 },
+  '100%': { transform: 'scale(1.2)', opacity: 0 },
+});
 
 export const home = style({
   width: '90vw',
@@ -13,19 +18,48 @@ export const content = style({
   position: 'relative',
 })
 
+
 export const circle = style({
   position: 'absolute',
   right: '80px',
   top: '120px',
   width: '400px',
-  height:'400px',
+  height: '400px',
   borderRadius: '50%',
-})
+  backgroundColor: 'var(--primary-color, defaultColor)',
+  zIndex: 1,
+});
+
+export const circleBefore = style({
+  content: '""',
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+  borderRadius: '50%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: 'inherit',
+  animation: `${ripple} 3s linear infinite`,
+  zIndex: -1,
+});
+
+export const circleAfter = style({
+  content: '""',
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+  borderRadius: '50%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: 'inherit',
+  animation: `${ripple} 3s linear infinite 1.5s`,
+  zIndex: -1,
+});
+
 
 export const img = style({
   position: 'absolute',
   width: '400px',
-  height:'400px',
+  height: '400px',
   borderRadius: '50%',
   objectFit: 'cover',
-})
+  zIndex: 2,
+});

@@ -19,7 +19,7 @@ function Layout({ home, about, projects, contact }) {
         about={about}
         projects={projects}
         contact={contact} />
-        <ThemeSwitcher themeColor={themeColor} setThemeColor={setThemeColor}/>
+        <ThemeSwitcher className={styles.hue} themeColor={themeColor} setThemeColor={setThemeColor}/>
         <div className={styles.appContent}>
           <Outlet />
         </div>

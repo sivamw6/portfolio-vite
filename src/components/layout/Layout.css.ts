@@ -7,7 +7,6 @@ export const app = style({
   flexDirection: "column",
   minHeight: "100dvh",
   backgroundColor: 'var(--primary-color, defaultColor)',
-
 })
 
 export const app2 = style({
@@ -20,4 +19,8 @@ export const appContent = style({
   margin: `${vars.space["2x"]} 0`,
   width: "100%",
   marginLeft: "180px"
+})
+
+export const hue = style({
+  zIndex: '999'
 })

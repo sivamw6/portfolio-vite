@@ -7,10 +7,11 @@ function Home() {
   return (
     <div className={styles.home}>
       <div className={styles.content}>
-        <div className={styles.circle}>
+      <div className={styles.circle}>
+          <div className={styles.circleBefore}></div>
+          <div className={styles.circleAfter}></div>
           <img className={styles.img} src={profilePhoto} alt="" />
-        </div>
-        <div className={styles.text}>
+        </div>        <div className={styles.text}>
           <h1 className={styles.h1}>
             Hi, I&apos;m Mavis
           </h1>
