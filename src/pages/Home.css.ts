@@ -55,6 +55,11 @@ export const img = style({
   borderRadius: '50%',
   objectFit: 'cover',
   zIndex: 2,
+  filter: 'blur(8px)',
+  transition: 'filter 0.5s ease-in-out',
+  ":hover": {
+    filter: 'blur(1px)'
+  }
 });
 
 export const text = style({
