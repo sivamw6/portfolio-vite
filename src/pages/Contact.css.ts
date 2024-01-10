@@ -6,14 +6,13 @@ export const contact = style({
   height: '100%',
   paddingTop: '100px',
   paddingBottom: '200px',
-
   backgroundColor: vars.colors.primary,
 })
 
 export const content = style({
   display: 'flex',
   height: '500px',
-  margin: '100px',
+  margin: '0 auto',
   textAlign: 'center',
 })
 
