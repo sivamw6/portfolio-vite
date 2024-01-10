@@ -20,10 +20,13 @@ export const linkContainer = style({
 });
 
 export const linkStyle = style({
-  paddingTop: vars.space['3x'],
+  paddingTop: vars.space['2x'],
+  paddingBottom: vars.space['2x'],
   ':hover': {
     color: vars.colors.brandDark,
-  }
+  },
+  boxShadow: 'none',
+  transition: 'box-shadow 0.5s ease-in-out',
 });
 
 export const externalLinkContainer = style({
@@ -40,6 +43,6 @@ export const pagesLink = style({
 
 
 export const activeLinkStyle = style({
-  borderLeft: 'pink 5px solid',
-
+  boxShadow: vars.shadow['3x'],
+  transition: 'box-shadow  0.5s ease-in-out',
 });

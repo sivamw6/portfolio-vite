@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +9,21 @@ import * as styles from './Sidebar.css'
 function Sidebar({ home, about, projects, contact }) {
   // Get the current location using react-router's useLocation hook
   const location = useLocation();
+  const [activeSection, setActiveSection] = useState('/');
+
+  // Define the function to determine the active section based on scroll position
+  const determineActiveSection = useCallback(() => {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition < about.current.offsetTop) {
+      return '/';
+    } else if (scrollPosition < projects.current.offsetTop) {
+      return '/about';
+    } else if (scrollPosition < contact.current.offsetTop) {
+      return '/projects';
+    } else {
+      return '/contact';
+    }
+  }, [about, projects, contact]);
 
   // Function to scroll to the given section
   const scrollToSection = useCallback((page) => {
@@ -27,23 +42,14 @@ function Sidebar({ home, about, projects, contact }) {
   // Add event listener to window to update URL when scrolling
   useEffect(() => {
     const handleScroll = debounce(() => {
-      if (window.scrollY < about.current.offsetTop) {
-        window.history.replaceState(null, null, '/');
-      } else if (window.scrollY < projects.current.offsetTop) {
-        window.history.replaceState(null, null, '/about');
-      } else if (window.scrollY < contact.current.offsetTop) {
-        window.history.replaceState(null, null, '/projects');
-      } else {
-        window.history.replaceState(null, null, '/contact');
-      }
+      setActiveSection(determineActiveSection());
     }, 100);
 
     window.addEventListener('scroll', handleScroll);
-
     // Cleanup: remove the event listener when the component is unmounted
     return () => window.removeEventListener('scroll', handleScroll);
     // Add dependencies to the dependency array
-  }, [about, projects, contact, scrollToSection]); 
+  }, [determineActiveSection]);
 
   // Scroll to the correct section when URL changes
   useEffect(() => {
@@ -60,7 +66,7 @@ function Sidebar({ home, about, projects, contact }) {
   }, [location, home, about, projects, contact, scrollToSection]); 
 
   const isActive = (path) => {
-    return location.pathname === path;
+    return activeSection === path;
   };
 
   return (
