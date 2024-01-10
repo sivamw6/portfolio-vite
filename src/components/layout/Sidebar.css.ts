@@ -8,6 +8,7 @@ export const nav = style({
   position: 'fixed',
   width: '120px',
   boxShadow: vars.shadow['4x'],
+  zIndex: 1,
 });
 
 export const linkContainer = style({
