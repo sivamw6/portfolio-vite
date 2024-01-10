@@ -64,7 +64,7 @@ export const img = style({
   objectFit: 'cover',
   zIndex: 2,
   filter: 'blur(8px)',
-  transition: 'filter 0.5s ease-in-out',
+  transition: 'filter 0.8s ease-in-out',
   ":hover": {
     filter: 'blur(1px)'
   }
@@ -88,4 +88,18 @@ export const text = style({
   opacity: "0",
   animation: `${fadeIn} 2s ease forwards`,
   animationDelay: '1s', 
+});
+
+// Parent container style
+export const letterAnimation = style({
+  // Styles for the container of the letters (h1, p, etc.)
+  // Add any necessary styles here
+});
+
+// Child (span) element style
+export const letterSpan = style({
+  opacity: 0,
+  animation: `${fadeIn} 0.3s ease forwards`,
+  display: 'inline-block', // Necessary for individual letter animation
+  // Add additional styles if needed
 });
