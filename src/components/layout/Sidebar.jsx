@@ -85,14 +85,15 @@ function Sidebar({ home, about, projects, contact }) {
           <li className={`${styles.linkStyle} ${isActive('/contact') ? styles.activeLinkStyle : ''}`}>
             <Link to='/contact' onClick={() => scrollToSection("/contact")}>Contact</Link>
           </li>
-        </ul>        <ul className={`${styles.linkContainer} ${styles.externalLinkContainer}`}>
+        </ul>
+        <ul className={`${styles.linkContainer} ${styles.externalLinkContainer}`}>
           <li>
-            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mavis-wang-64019b277/">
+            <a className={styles.externalLink} target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mavis-wang-64019b277/">
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
           </li>
           <li>
-            <a target="_blank" rel="noreferrer" href="https://github.com/sivamw6">
+            <a className={styles.externalLink} target="_blank" rel="noreferrer" href="https://github.com/sivamw6">
               <FontAwesomeIcon icon={faGithub} />
             </a>
           </li>
