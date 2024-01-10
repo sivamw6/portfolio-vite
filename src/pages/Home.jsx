@@ -9,7 +9,7 @@ function Home() {
       <div className={styles.content}>
         <div className={styles.circle}>
           <div className={styles.circleBefore}></div>
-          <img className={styles.img} src={profilePhoto} alt="" />
+          <img className={styles.img} loading="lazy" src={profilePhoto} alt="" />
         </div>        
         <div className={styles.text}>
           <h1 className={styles.h1}>
