@@ -46,3 +46,8 @@ export const mapBox = style({
   margin: '20px',
 
 })
+
+export const messageBox = style({
+  marginTop: '20px',
+  borderRadius: '8px',
+});

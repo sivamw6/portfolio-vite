@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.smooth_marker_bouncing';
@@ -9,6 +9,16 @@ import markerIconShadowPng from '../images/marker-shadow.png';
 
 const Contact = () => {
   const mapRef = useRef(null);
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [ showMessage, setShowMessage ] = useState(false);
+
+  const handleSubmit = () => {
+    event.preventDefault();
+    setShowMessage(true);
+    setEmail('');
+    setMessage('');
+  }
 
   useEffect(() => {
     const map = L.map(mapRef.current, {
@@ -61,13 +71,29 @@ const Contact = () => {
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Your email" />
+              <Form.Control 
+              type="email"
+              placeholder="Your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}              
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
               <Form.Label>Message</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control 
+              as="textarea"
+              rows={3}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}              
+              />
             </Form.Group>
-            <button className={styles.button}>Submit</button>
+            <button className={styles.button} onClick={(event) => handleSubmit(event)}>Submit</button>
+            {showMessage && (
+              <div className={styles.messageBox}> 
+                Your message has been submitted, I will reply you soon!
+                <hr />
+              </div>
+            )}
           </Form>
         </div>
         <div className={styles.mapBox} ref={mapRef} >
