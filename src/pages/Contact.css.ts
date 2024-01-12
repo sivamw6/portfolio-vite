@@ -17,7 +17,6 @@ export const content = style({
   textAlign: 'center',
 })
 
-
 export const formBox = style({
   width: '450px',
   margin: '20px',
@@ -36,9 +35,7 @@ export const button = style({
   },
   ':active': {
     boxShadow: vars.shadow['3x'],
-
   }
-  
 })
 
 export const mapBox = style({

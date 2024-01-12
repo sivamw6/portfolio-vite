@@ -13,7 +13,7 @@ const fadeIn = keyframes({
 
 export const home = style({
   width: '1380px',
-  height: '90vh',
+  height: '80vh',
   marginLeft: '-180px',
   backgroundColor: vars.colors.primary,
 })

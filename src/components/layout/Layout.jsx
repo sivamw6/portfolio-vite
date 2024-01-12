@@ -12,14 +12,14 @@ function Layout({ home, about, projects, contact }) {
 
   return (
     <div className={styles.app}>
-
+      <ThemeSwitcher themeColor={themeColor} setThemeColor={setThemeColor}>
+      </ThemeSwitcher>
       <div className={styles.app2}>
         <Sidebar         
         home={home}
         about={about}
         projects={projects}
         contact={contact} />
-        <ThemeSwitcher className={styles.hue} themeColor={themeColor} setThemeColor={setThemeColor}/>
         <div className={styles.appContent}>
           <Outlet />
         </div>

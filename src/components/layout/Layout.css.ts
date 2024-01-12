@@ -22,6 +22,3 @@ export const appContent = style({
   marginLeft: "180px"
 })
 
-export const hue = style({
-  zIndex: '999'
-})
