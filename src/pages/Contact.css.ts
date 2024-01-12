@@ -26,10 +26,19 @@ export const formBox = style({
 export const button = style({
   width: '100%',
   border: 'none',
+  padding: vars.space['1x'],
+  borderRadius: vars.borderRadius['2x'],  
   backgroundColor: 'var(--primary-color, defaultColor)',
   ':hover': {
-    backgroundColor: 'none',
+    backgroundColor: vars.colors.primary,
+    color: vars.colors.complementary,
+    boxShadow: vars.shadow['2x'],
+  },
+  ':active': {
+    boxShadow: vars.shadow['3x'],
+
   }
+  
 })
 
 export const mapBox = style({

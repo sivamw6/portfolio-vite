@@ -4,7 +4,6 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet.smooth_marker_bouncing';
 import * as styles from './Contact.css';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import markerIconPng from '../images/marker-icon.png';
 import markerIconShadowPng from '../images/marker-shadow.png';
 
@@ -68,7 +67,7 @@ const Contact = () => {
               <Form.Label>Message</Form.Label>
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
-            <Button className={styles.button}>Submit</Button>
+            <button className={styles.button}>Submit</button>
           </Form>
         </div>
         <div className={styles.mapBox} ref={mapRef} >
