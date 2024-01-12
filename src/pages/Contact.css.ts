@@ -11,14 +11,16 @@ export const contact = style({
 
 export const content = style({
   display: 'flex',
+  justifyContent: 'center',
   height: '500px',
-  margin: '0 auto',
+  margin: 'auto',
   textAlign: 'center',
 })
 
 
 export const formBox = style({
   width: '450px',
+  margin: '20px',
 })
 
 export const button = style({
@@ -26,10 +28,12 @@ export const button = style({
   border: 'none',
   backgroundColor: 'var(--primary-color, defaultColor)',
   ':hover': {
-    backgroundColor: 'pink',
+    backgroundColor: 'none',
   }
 })
 
 export const mapBox = style({
   width: '450px',
+  margin: '20px',
+
 })
