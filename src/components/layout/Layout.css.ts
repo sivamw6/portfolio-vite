@@ -5,13 +5,13 @@ export const app = style({
   fontFamily: vars.fonts.body,
   display: "flex",
   flexDirection: "column",
-  minHeight: "100dvh",
+  minHeight: "100vh", 
   backgroundColor: 'var(--primary-color, defaultColor)',
   minWidth: '100vw',
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '100vw',
-  },
+      flexDirection: "row", 
+    },
   }
 })
 
@@ -24,6 +24,10 @@ export const app2 = style({
 export const appContent = style({
   margin: `${vars.space["2x"]} 0`,
   width: "100%",
-  marginLeft: "180px"
+  // marginLeft: "180px",
+  '@media': {
+    'screen and (max-width: 600px)': {
+      marginLeft: '20px', 
+    },
+  }
 })
-

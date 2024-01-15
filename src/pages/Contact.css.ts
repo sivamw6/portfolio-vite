@@ -4,9 +4,17 @@ import { vars } from '../styles/themes.css';
 export const contact = style({
   width: '1200px',
   height: '100%',
+  marginLeft: "180px",
   paddingTop: '100px',
   paddingBottom: '200px',
   backgroundColor: vars.colors.primary,
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '100vw',
+      marginLeft: '85px',
+      height: '100%'
+    },
+  },
 })
 
 export const content = style({

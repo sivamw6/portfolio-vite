@@ -14,8 +14,13 @@ const fadeIn = keyframes({
 export const home = style({
   width: '1380px',
   height: '80vh',
-  marginLeft: '-180px',
   backgroundColor: vars.colors.primary,
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '100vw',
+      height: '100vh'
+    },
+  },
 })
 
 export const content = style({
@@ -40,10 +45,11 @@ export const circle = style({
   },
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '200px',
-      height: '200px',
-      top: '60px',
-      right: '40px',
+      width: '300px',
+      height: '300px',
+      top: '60vh',
+      right: '40vw',
+      transform: 'translate(50%, -50%)',
     },
   },
 
@@ -71,6 +77,12 @@ export const img = style({
   transition: 'filter 0.8s ease-in-out',
   ":hover": {
     filter: 'blur(1px)'
+  },
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '300px',
+      height: '300px',
+    },
   }
 });
 
@@ -87,6 +99,7 @@ export const text = style({
     'screen and (max-width: 600px)': {
       padding: '10px',
       fontSize: '90%',
+      top: '20vh',
     },
   },
   opacity: "0",

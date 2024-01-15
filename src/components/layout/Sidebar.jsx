@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { FaHome, FaUser } from "react-icons/fa";
+import { FaHome, FaUser, FaWindowMaximize, FaPaperPlane } from "react-icons/fa";
 
 import * as styles from './Sidebar.css'
 
@@ -97,19 +97,31 @@ function Sidebar({ home, about, projects, contact }) {
           <li className={`${styles.linkStyle} ${isActive('/about') ? styles.activeLinkStyle : ''}`}>
 
           {isMobileView ? (
-              <Link to='/' onClick={() => scrollToSection("/about")}>
+              <Link to='/about' onClick={() => scrollToSection("/about")}>
                 <FaUser />
               </Link>
             ) : (
-              <Link to='/' onClick={() => scrollToSection("/about")}>About</Link>
+              <Link to='/about' onClick={() => scrollToSection("/about")}>About</Link>
             )}
             
           </li>
           <li className={`${styles.linkStyle} ${isActive('/projects') ? styles.activeLinkStyle : ''}`}>
-            <Link to='/projects' onClick={() => scrollToSection("/projects")}>Projects</Link>
+          {isMobileView ? (
+              <Link to='/projects' onClick={() => scrollToSection("/projects")}>
+                <FaWindowMaximize />
+              </Link>
+            ) : (
+              <Link to='/projects' onClick={() => scrollToSection("/projects")}>Project</Link>
+            )}
           </li>
           <li className={`${styles.linkStyle} ${isActive('/contact') ? styles.activeLinkStyle : ''}`}>
-            <Link to='/contact' onClick={() => scrollToSection("/contact")}>Contact</Link>
+          {isMobileView ? (
+              <Link to='/contact' onClick={() => scrollToSection("/contact")}>
+                <FaPaperPlane />
+              </Link>
+            ) : (
+              <Link to='/contact' onClick={() => scrollToSection("/contact")}>Contact</Link>
+            )}
           </li>
         </ul>
         <ul className={`${styles.linkContainer} ${styles.externalLinkContainer}`}>

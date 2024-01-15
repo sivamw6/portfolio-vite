@@ -4,7 +4,16 @@ import { vars } from '../styles/themes.css';
 export const about = style({
   width: '1200px',
   height: '100%',
+  marginLeft: "180px",
+  paddingBottom: '20px',
   backgroundColor: vars.colors.primary,
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '100vw',
+      marginLeft: '85px',
+      height: '100%'
+    },
+  },
 })
 
 export const content1 = style({
@@ -14,8 +23,13 @@ export const content1 = style({
   borderRadius: '10px',
   margin: '100px',
   boxShadow: vars.shadow['2x'],
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '50vw',
+      margin: '40px',
 
-})
+    },
+  },})
 
 export const content2 = style({
   width: '30vw',
@@ -24,7 +38,12 @@ export const content2 = style({
   borderRadius: '10px',
   marginLeft: '30%',
   boxShadow: vars.shadow['2x'],
-
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '60vw',
+      margin: '80px',
+    },
+  }
 })
 
 export const content3 = style({
@@ -34,7 +53,12 @@ export const content3 = style({
   borderRadius: '10px',
   margin: '100px',
   boxShadow: vars.shadow['2x'],
-
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '50vw',
+      margin: '40px',
+    },
+  }
 })
 
 export const content4 = style({
@@ -44,8 +68,12 @@ export const content4 = style({
   borderRadius: '10px',
   marginLeft: '45%',
   boxShadow: vars.shadow['2x'],
-
-})
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '60vw',
+      margin: '80px',
+    },
+  }})
 
 
 export const p = style({

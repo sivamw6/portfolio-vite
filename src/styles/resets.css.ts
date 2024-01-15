@@ -24,11 +24,7 @@ globalStyle("body", {
 
   textRendering: "optimizeSpeed",
   lineHeight: 1.5,
-  '@media': {
-    'screen and (max-width: 600px)': {
-      width: '100vw',
-    },
-  },});
+});
 
 // Set core anchor settings
 globalStyle("a", {

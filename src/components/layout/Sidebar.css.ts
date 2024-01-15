@@ -12,6 +12,7 @@ export const nav = style({
   textTransform: 'uppercase', 
   '@media': {
     'screen and (max-width: 600px)': {
+      height: '50vh',
       width: '50px',
       color: 'black',
 
@@ -40,18 +41,22 @@ export const linkStyle = style({
   ':hover': {
     fontWeight: 'bold',
   },
-   boxShadow: 'none',
+  boxShadow: 'none',
   transition: 'box-shadow 0.5s ease-in-out',
+  
 });
 
 export const externalLinkContainer = style({
   bottom: '25px',
   left: '50%',
   transform: 'translateX(-50%)',
+  
   fontSize: vars.space['4x'],
 });
 
 export const externalLink  = style({
+  paddingTop: vars.space['2x'],
+
   ':hover': {
     color:' var(--primary-color, defaultColor)',
   }
