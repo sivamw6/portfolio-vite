@@ -8,6 +8,11 @@ export const app = style({
   minHeight: "100dvh",
   backgroundColor: 'var(--primary-color, defaultColor)',
   minWidth: '100vw',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '100vw',
+  },
+  }
 })
 
 export const app2 = style({

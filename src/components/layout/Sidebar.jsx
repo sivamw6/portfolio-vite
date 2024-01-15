@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FaHome, FaUser } from "react-icons/fa";
 
 import * as styles from './Sidebar.css'
 
@@ -10,6 +11,17 @@ function Sidebar({ home, about, projects, contact }) {
   // Get the current location using react-router's useLocation hook
   const location = useLocation();
   const [activeSection, setActiveSection] = useState('/');
+  
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 600);
+
+  const updateView = useCallback(() => {
+    setIsMobileView(window.innerWidth < 600);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', updateView);
+    return () => window.removeEventListener('resize', updateView);
+  }, [updateView]);
 
   // Define the function to determine the active section based on scroll position
   const determineActiveSection = useCallback(() => {
@@ -73,11 +85,25 @@ function Sidebar({ home, about, projects, contact }) {
     <div>
       <nav className={styles.nav}>
         <ul className={`${styles.linkContainer} ${styles.pagesLink}`}>
-          <li className={`${styles.linkStyle} ${isActive('/') ? styles.activeLinkStyle : ''}`}>
-            <Link to='/' onClick={() => scrollToSection("/")}>Home</Link>
+        <li className={`${styles.linkStyle} ${isActive('/') ? styles.activeLinkStyle : ''}`}>
+            {isMobileView ? (
+              <Link to='/' onClick={() => scrollToSection("/")}>
+                <FaHome />
+              </Link>
+            ) : (
+              <Link to='/' onClick={() => scrollToSection("/")}>Home</Link>
+            )}
           </li>
           <li className={`${styles.linkStyle} ${isActive('/about') ? styles.activeLinkStyle : ''}`}>
-            <Link to='/about' onClick={() => scrollToSection("/about")}>About</Link>
+
+          {isMobileView ? (
+              <Link to='/' onClick={() => scrollToSection("/about")}>
+                <FaUser />
+              </Link>
+            ) : (
+              <Link to='/' onClick={() => scrollToSection("/about")}>About</Link>
+            )}
+            
           </li>
           <li className={`${styles.linkStyle} ${isActive('/projects') ? styles.activeLinkStyle : ''}`}>
             <Link to='/projects' onClick={() => scrollToSection("/projects")}>Projects</Link>

@@ -9,7 +9,15 @@ export const nav = style({
   width: '120px',
   boxShadow: vars.shadow['4x'],
   zIndex: 1,
-  textTransform: 'uppercase',
+  textTransform: 'uppercase', 
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '50px',
+      color: 'black',
+
+  },
+}
+  
 });
 
 export const linkContainer = style({
@@ -19,6 +27,11 @@ export const linkContainer = style({
   textAlign: 'center',
   color: vars.colors.complementary,
   fontSize: vars.space['2x'],
+  '@media': {
+    'screen and (max-width: 600px)': {
+      fontSize: vars.space['2x'],
+
+  },}
 });
 
 export const linkStyle = style({

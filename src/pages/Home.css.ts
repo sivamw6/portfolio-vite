@@ -37,7 +37,15 @@ export const circle = style({
   transition: 'filter 0.5s ease-in-out',
   ":hover": {
     filter: 'blur(0px)'
-  }
+  },
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '200px',
+      height: '200px',
+      top: '60px',
+      right: '40px',
+    },
+  },
 
 });
 
