@@ -11,7 +11,8 @@ export const projects = style({
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',
-      marginLeft: '85px',
+      marginLeft: '0',
+      paddingLeft: '70px',
       height: '100%'
     },
   },
@@ -24,6 +25,13 @@ export const imgBox = style({
   justifyContent: 'center',
   alignItems: 'center',
   gap: vars.space['4x'],
+  '@media': {
+    'screen and (max-width: 600px)': {
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      gap: vars.space['6x'],
+    },
+  },
 });
 
 export const img = style({
@@ -41,6 +49,13 @@ export const img = style({
     '&:hover': {
       opacity: 1,
       transform: 'perspective(800px)',
+    },
+  },
+  '@media': {
+    'screen and (max-width: 600px)': {
+      transform: 'none', 
+      WebkitBoxReflect: 'unset',
+
     },
   },
 });

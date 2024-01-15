@@ -10,7 +10,8 @@ export const about = style({
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',
-      marginLeft: '85px',
+      marginLeft: '0',
+      paddingLeft: '70px',
       height: '100%'
     },
   },

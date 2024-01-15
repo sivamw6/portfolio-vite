@@ -7,27 +7,36 @@ export const contact = style({
   marginLeft: "180px",
   paddingTop: '100px',
   paddingBottom: '200px',
+  display: 'flex',
+
   backgroundColor: vars.colors.primary,
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',
-      marginLeft: '85px',
-      height: '100%'
+      marginLeft: '0',
+      height: '100vh',
+      paddingLeft: '70px',
     },
   },
 })
 
 export const content = style({
-  display: 'flex',
+  flex: '1',
   justifyContent: 'center',
   height: '500px',
   margin: 'auto',
   textAlign: 'center',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      flexDirection: 'column', 
+    },
+  },
 })
 
 export const formBox = style({
   width: '450px',
   margin: '20px',
+  
 })
 
 export const button = style({
@@ -49,7 +58,7 @@ export const button = style({
 export const mapBox = style({
   width: '450px',
   margin: '20px',
-
+  minWidth: '450px',
 })
 
 export const messageBox = style({

@@ -8,8 +8,8 @@ const Projects = () => {
   return (
       <div className={styles.projects}>
         <h1 className="ms-5 ">Projects</h1>
-        <SlideInAnimation>
           <div className={`${styles.imgBox} ${styles.boxHover}`}>
+        <SlideInAnimation>
             <div className={styles.box1}>
               <a 
                 href="https://www.mavishin.com/ootd/index.php" 
@@ -19,6 +19,8 @@ const Projects = () => {
               </a>
               <p className={styles.p}>PHP CRUD</p>
             </div>
+            </SlideInAnimation>
+            <SlideInAnimation>
 
             <div className={styles.box2}>
               <a 
@@ -29,7 +31,8 @@ const Projects = () => {
               </a>
               <p className={styles.p}>Bootstrap</p>
             </div>
-
+            </SlideInAnimation>
+            <SlideInAnimation>
             <div className={styles.box3}>
                 <a 
                   href="https://asia-venture.vercel.app/" 
@@ -40,9 +43,9 @@ const Projects = () => {
                 <h5 className={styles.p}>Next.js</h5>
               </div>
 
+            </SlideInAnimation>
           </div>
 
-        </SlideInAnimation>
       </div>
 
   )
