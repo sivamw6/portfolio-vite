@@ -32,7 +32,7 @@ function About() {
   <SlideInAnimation>
     <div className={styles.content4}>
       <p className={styles.p}>
-        In my free time, I'm either exploring new technologies or keeping abreast of the latest trends in web development. My goal is to continuously advance my technical skills and contribute to innovative web solutions.
+        In my free time, I&apos;m either exploring new technologies or keeping abreast of the latest trends in web development. My goal is to continuously advance my technical skills and contribute to innovative web solutions.
       </p>
     </div>
   </SlideInAnimation>

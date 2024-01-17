@@ -1,5 +1,5 @@
 import * as styles from './Projects.css'
-import phpWebsite from '../images/php-website.jpg';
+import bubbleBreeze from '../images/bubble-breeze.png';
 import bootstrapWebsite from '../images/bootstrap-website.jpg';
 import asiaVenture from '../images/asia-venture.png';
 import SlideInAnimation from '../components/features/SlideInAnimation';
@@ -12,10 +12,10 @@ const Projects = () => {
         <SlideInAnimation>
             <div className={styles.box1}>
               <a 
-                href="https://www.mavishin.com/ootd/index.php" 
+                href="https://github.com/sivamw6/BubblelBreeze" 
                 target="_blank" 
                 rel="noopener noreferrer">
-                <img className={styles.img} src={phpWebsite} alt='php-website'></img>
+                <img className={styles.img} src={bubbleBreeze} alt='php-website'></img>
               </a>
               <p className={styles.p}>PHP CRUD</p>
             </div>
