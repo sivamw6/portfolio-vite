@@ -21,7 +21,6 @@ export const contact = style({
 })
 
 export const content = style({
-  flex: '1',
   justifyContent: 'center',
   height: '500px',
   margin: 'auto',
@@ -58,7 +57,6 @@ export const button = style({
 export const mapBox = style({
   width: '450px',
   margin: '20px',
-  minWidth: '450px',
 })
 
 export const messageBox = style({
