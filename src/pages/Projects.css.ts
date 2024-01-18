@@ -2,12 +2,12 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '../styles/themes.css'; 
 
 export const projects = style({
-  width: '1200px',
+  width: '90vw',
   height: '100%',
   marginLeft: "180px",
   paddingTop: '100px',
   paddingBottom: '400px',
-  backgroundColor: vars.colors.primary,
+  backgroundColor: vars.colors.semiTransparent,
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',

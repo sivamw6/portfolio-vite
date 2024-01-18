@@ -14,7 +14,7 @@ export const root = createGlobalTheme(":root", {
     brand: twColors.pink[800],
     brandLight: twColors.pink[400],
     brandDark: twColors.pink[600],
-    semiTransparent: "#ffffff6b",
+    semiTransparent: "#ffffff94",
     transparent: "transparent",
 
     // Color tokens
