@@ -26,7 +26,7 @@ export const content = style({
   textAlign: 'center',
   '@media': {
     'screen and (max-width: 600px)': {
-      flexDirection: 'column', 
+      margin: '0'
     },
   },
 })
@@ -34,7 +34,12 @@ export const content = style({
 export const formBox = style({
   width: '450px',
   margin: '20px',
-  
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '60vw'
+    },
+  },
+
 })
 
 export const button = style({
