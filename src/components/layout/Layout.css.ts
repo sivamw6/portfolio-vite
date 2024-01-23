@@ -6,7 +6,7 @@ export const app = style({
   display: "flex",
   flexDirection: "column",
   minHeight: "100vh", 
-  backgroundColor: 'var(--primary-color, defaultColor)',
+  backgroundColor: vars.colors.primary,
   minWidth: '100vw',
   '@media': {
     'screen and (max-width: 600px)': {

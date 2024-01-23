@@ -8,7 +8,7 @@ export const contact = style({
   paddingTop: '100px',
   paddingBottom: '200px',
   display: 'flex',
-  backgroundColor: vars.colors.semiTransparent,
+  backgroundColor: vars.colors.primary,
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',

@@ -7,7 +7,7 @@ export const projects = style({
   marginLeft: "180px",
   paddingTop: '100px',
   paddingBottom: '400px',
-  backgroundColor: vars.colors.semiTransparent,
+  backgroundColor: vars.colors.primary,
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',

@@ -14,7 +14,7 @@ const fadeIn = keyframes({
 export const home = style({
   width: '100vw',
   height: '80vh',
-  backgroundColor: vars.colors.semiTransparent,
+  backgroundColor: vars.colors.primary,
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',
