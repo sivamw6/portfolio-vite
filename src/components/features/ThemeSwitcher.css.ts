@@ -6,4 +6,10 @@ export const hue = style({
   position : 'absolute',
   left: '180px',
   top: '5%',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '50vw',
+      left: '20vw'
+    },
+  },
 })

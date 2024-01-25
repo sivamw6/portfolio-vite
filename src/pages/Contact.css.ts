@@ -13,8 +13,8 @@ export const contact = style({
     'screen and (max-width: 600px)': {
       width: '100vw',
       marginLeft: '0',
-      height: '100vh',
       paddingLeft: '70px',
+      height: '100vh',
     },
   },
 })
@@ -33,7 +33,7 @@ export const content = style({
 
 export const formBox = style({
   width: '450px',
-  margin: '20px',
+  marginLeft: '10vw',
   '@media': {
     'screen and (max-width: 600px)': {
       width: '60vw'
