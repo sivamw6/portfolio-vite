@@ -15,7 +15,6 @@ export const nav = style({
       height: '50vh',
       width: '50px',
       color: 'black',
-      position: 'sticky',
     },
 }
 });

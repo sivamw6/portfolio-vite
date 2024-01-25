@@ -7,10 +7,9 @@ export const app = style({
   flexDirection: "column",
   minHeight: "100vh", 
   backgroundColor: vars.colors.primary,
-  minWidth: '100vw',
   '@media': {
     'screen and (max-width: 600px)': {
-      flexDirection: "row", 
+      width: '100vw',
     },
   }
 })
@@ -27,7 +26,7 @@ export const appContent = style({
   // marginLeft: "180px",
   '@media': {
     'screen and (max-width: 600px)': {
-      marginLeft: '20px', 
+      // marginLeft: '20px', 
     },
   }
 })
