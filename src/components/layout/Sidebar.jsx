@@ -12,16 +12,6 @@ function Sidebar({ home, about, projects, contact }) {
   const location = useLocation();
   const [activeSection, setActiveSection] = useState('/');
   
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 600);
-
-  const updateView = useCallback(() => {
-    setIsMobileView(window.innerWidth < 600);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('resize', updateView);
-    return () => window.removeEventListener('resize', updateView);
-  }, [updateView]);
 
   // Define the function to determine the active section based on scroll position
   const determineActiveSection = useCallback(() => {
@@ -86,42 +76,28 @@ function Sidebar({ home, about, projects, contact }) {
       <nav className={styles.nav}>
         <ul className={`${styles.linkContainer} ${styles.pagesLink}`}>
         <li className={`${styles.linkStyle} ${isActive('/') ? styles.activeLinkStyle : ''}`}>
-            {isMobileView ? (
-              <Link to='/' onClick={() => scrollToSection("/")}>
-                <FaHome />
-              </Link>
-            ) : (
-              <Link to='/' onClick={() => scrollToSection("/")}>Home</Link>
-            )}
-          </li>
-          <li className={`${styles.linkStyle} ${isActive('/about') ? styles.activeLinkStyle : ''}`}>
-
-          {isMobileView ? (
-              <Link to='/about' onClick={() => scrollToSection("/about")}>
-                <FaUser />
-              </Link>
-            ) : (
-              <Link to='/about' onClick={() => scrollToSection("/about")}>About</Link>
-            )}
-            
+          <Link to='/' onClick={() => scrollToSection("/")}>
+            <span className={styles.textLinkStyle}>Home</span>
+            <FaHome className={styles.iconLinkStyle} />
+          </Link>
+        </li>
+        <li className={`${styles.linkStyle} ${isActive('/about') ? styles.activeLinkStyle : ''}`}>
+            <Link to='/about' onClick={() => scrollToSection("/about")}>
+              <span className={styles.textLinkStyle}>About</span>
+              <FaUser className={styles.iconLinkStyle} />
+            </Link>
           </li>
           <li className={`${styles.linkStyle} ${isActive('/projects') ? styles.activeLinkStyle : ''}`}>
-          {isMobileView ? (
-              <Link to='/projects' onClick={() => scrollToSection("/projects")}>
-                <FaWindowMaximize />
-              </Link>
-            ) : (
-              <Link to='/projects' onClick={() => scrollToSection("/projects")}>Project</Link>
-            )}
+            <Link to='/projects' onClick={() => scrollToSection("/projects")}>
+              <span className={styles.textLinkStyle}>Project</span>
+              <FaWindowMaximize className={styles.iconLinkStyle} />
+            </Link>
           </li>
           <li className={`${styles.linkStyle} ${isActive('/contact') ? styles.activeLinkStyle : ''}`}>
-          {isMobileView ? (
-              <Link to='/contact' onClick={() => scrollToSection("/contact")}>
-                <FaPaperPlane />
-              </Link>
-            ) : (
-              <Link to='/contact' onClick={() => scrollToSection("/contact")}>Contact</Link>
-            )}
+            <Link to='/contact' onClick={() => scrollToSection("/contact")}>
+              <span className={styles.textLinkStyle}>Contact</span>
+              <FaPaperPlane className={styles.iconLinkStyle} />
+            </Link>
           </li>
         </ul>
         <ul className={`${styles.linkContainer} ${styles.externalLinkContainer}`}>

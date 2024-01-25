@@ -15,10 +15,9 @@ export const nav = style({
       height: '50vh',
       width: '50px',
       color: 'black',
-
-  },
+      position: 'sticky',
+    },
 }
-  
 });
 
 export const linkContainer = style({
@@ -31,7 +30,6 @@ export const linkContainer = style({
   '@media': {
     'screen and (max-width: 600px)': {
       fontSize: vars.space['2x'],
-
   },}
 });
 
@@ -43,7 +41,22 @@ export const linkStyle = style({
   },
   boxShadow: 'none',
   transition: 'box-shadow 0.5s ease-in-out',
-  
+});
+
+export const textLinkStyle = style({
+  '@media': {
+    'screen and (max-width: 600px)': {
+      display: 'none',
+  },}
+})
+
+export const iconLinkStyle = style({
+  display: 'none', 
+  '@media': {
+    'screen and (max-width: 600px)': {
+      display: 'inherit',
+    },
+  },
 });
 
 export const externalLinkContainer = style({
