@@ -33,10 +33,10 @@ export const content = style({
 
 export const formBox = style({
   width: '450px',
-  marginLeft: '10vw',
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '60vw'
+      width: '60vw',
+      marginLeft: '10vw',
     },
   },
 
