@@ -77,6 +77,21 @@ export const content4 = style({
   }})
 
 
+export const content5 = style({
+  width: '30vw',
+  height: '100%',
+  display: 'flex',
+  borderRadius: '10px',
+  marginLeft: '45%',
+  boxShadow: vars.shadow['2x'],
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '60vw',
+      margin: '80px',
+    },
+  }})
+
+
 export const p = style({
   textAlign: 'left',
   padding: vars.space['2x'],
