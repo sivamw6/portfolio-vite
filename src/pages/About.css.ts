@@ -82,14 +82,16 @@ export const content5 = style({
   height: '100%',
   display: 'flex',
   borderRadius: '10px',
-  marginLeft: '45%',
+  margin: '100px',
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '60vw',
-      margin: '80px',
+      width: '50vw',
+      margin: '40px',
     },
-  }})
+  }
+})
+
 
 
 export const p = style({
