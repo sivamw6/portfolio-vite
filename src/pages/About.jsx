@@ -8,7 +8,7 @@ function About() {
   <SlideInAnimation>
     <div className={styles.content1}>
       <p className={styles.p}>
-        Hello, I&apos;m Mavis Wang, a dedicated IT professional specializing in web development. My journey began in 2022, and since then, I&apos;ve been focused on refining my skills in HTML, CSS, JavaScript, React, PHP, and SQL.
+        Hello, I&apos;m Mavis Wang, a dedicated IT professional specializing in web development and IT support. Since June 2023, I&apos;ve been working at Rickpeck Pty Ltd as an IT Support Specialist, where I manage various technical issues and ensure smooth IT operations.
       </p>
     </div>
   </SlideInAnimation>
@@ -16,7 +16,7 @@ function About() {
   <SlideInAnimation>
     <div className={styles.content2}>
       <p className={styles.p}>
-        My experience ranges from crafting user-centric websites to developing complex web applications. I thrive on challenges and enjoy translating creative ideas into functional and accessible web solutions. 
+        My experience ranges from crafting user-centric websites to developing complex web applications. I thrive on challenges and enjoy translating creative ideas into functional and accessible web solutions. I am proficient in various JavaScript frameworks, including React, Vue, and Angular.
       </p>
     </div>
   </SlideInAnimation>
@@ -32,12 +32,19 @@ function About() {
   <SlideInAnimation>
     <div className={styles.content4}>
       <p className={styles.p}>
-        In my free time, I&apos;m either exploring new technologies or keeping abreast of the latest trends in web development. My goal is to continuously advance my technical skills and contribute to innovative web solutions.
+        I am also actively involved in volunteer work. I contribute as a Web Developer at VicWise, where I help design and maintain their website. Additionally, I volunteer as an iPad Tutor at Boroondara Community Library, assisting community members with their tech needs.
       </p>
     </div>
   </SlideInAnimation>
-</div>
-  )
+
+  <SlideInAnimation>
+    <div className={styles.content5}>
+      <p className={styles.p}>
+        Currently, I am pursuing a Master of Information Technology in Computer Science at Queensland University of Technology (QUT). In my free time, I&apos;m either exploring new technologies or keeping abreast of the latest trends in web development. My goal is to continuously advance my technical skills and contribute to innovative web solutions.
+      </p>
+    </div>
+  </SlideInAnimation>
+</div>  )
 }
 
 export default About
