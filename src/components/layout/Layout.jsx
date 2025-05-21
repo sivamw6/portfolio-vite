@@ -7,7 +7,7 @@ import ThemeSwitcher from '../features/ThemeSwitcher'
 import Sidebar from './Sidebar'
 import Foorter from './Footer'
 
-function Layout({ home, about, projects, contact }) {
+function Layout({ sectionRefs }) {
   const [themeColor, setThemeColor] = useState('');
 
   return (
@@ -15,11 +15,7 @@ function Layout({ home, about, projects, contact }) {
       <ThemeSwitcher themeColor={themeColor} setThemeColor={setThemeColor}>
       </ThemeSwitcher>
       <div className={styles.app2}>
-        <Sidebar         
-        home={home}
-        about={about}
-        projects={projects}
-        contact={contact} />
+        <Sidebar sectionRefs={sectionRefs} />
         <div className={styles.appContent}>
           <Outlet />
         </div>

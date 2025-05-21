@@ -16,6 +16,14 @@ function App() {
     const about = useRef(null);
     const projects = useRef(null);
     const contact = useRef(null);
+
+    const sectionRefs = {
+      home,
+      about,
+      projects,
+      contact
+    };
+
     const mainPage = (
       <>
         <div ref={home}>
@@ -37,10 +45,7 @@ function App() {
     <div className='app'>
       <Routes>
         <Route path='/' element={<Layout 
-              home={home} 
-              about={about} 
-              projects={projects} 
-              contact={contact} />} >
+          sectionRefs={sectionRefs} />} >
           <Route index element={mainPage} />
           <Route path='about' element={mainPage} />
           <Route path='projects' element={mainPage} />

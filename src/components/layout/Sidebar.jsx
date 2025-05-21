@@ -7,11 +7,12 @@ import { FaHome, FaUser, FaWindowMaximize, FaPaperPlane } from "react-icons/fa";
 
 import * as styles from './Sidebar.css'
 
-function Sidebar({ home, about, projects, contact }) {
+function Sidebar({ sectionRefs }) {
   // Get the current location using react-router's useLocation hook
   const location = useLocation();
   const [activeSection, setActiveSection] = useState('/');
   
+  const { home, about, projects, contact } = sectionRefs;
 
   // Define the function to determine the active section based on scroll position
   const determineActiveSection = useCallback(() => {
