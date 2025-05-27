@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { FaHome, FaUser, FaWindowMaximize, FaPaperPlane } from "react-icons/fa";
+import { FaHome, FaUser, FaWindowMaximize, FaPaperPlane, FaAddressBook } from "react-icons/fa";
 
 import * as styles from './Sidebar.css'
 
@@ -12,7 +12,7 @@ function Sidebar({ sectionRefs }) {
   const location = useLocation();
   const [activeSection, setActiveSection] = useState('/');
   
-  const { home, about, projects, contact } = sectionRefs;
+  const { home, about, projects, resume, contact } = sectionRefs;
 
   // Define the function to determine the active section based on scroll position
   const determineActiveSection = useCallback(() => {
@@ -23,10 +23,12 @@ function Sidebar({ sectionRefs }) {
       return '/about';
     } else if (scrollPosition < contact.current.offsetTop) {
       return '/projects';
+    } else if (scrollPosition < resume.current.offsetTop) {
+      return '/resume';
     } else {
       return '/contact';
     }
-  }, [about, projects, contact]);
+  }, [about, projects, resume, contact]);
 
   // Function to scroll to the given section
   const scrollToSection = useCallback((page) => {
@@ -34,13 +36,14 @@ function Sidebar({ sectionRefs }) {
       page === "/" ? home
       : page === "/about" ? about
       : page === "/projects" ? projects
+      : page === "/resume" ? resume
       : page === "/contact" ? contact
       : null;
 
     if (elementRef && elementRef.current) {
       elementRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [home, about, projects, contact]);
+  }, [home, about, projects, resume, contact]);
 
   // Add event listener to window to update URL when scrolling
   useEffect(() => {
@@ -62,11 +65,13 @@ function Sidebar({ sectionRefs }) {
       scrollToSection(about);
     } else if (location.pathname === '/projects') {
       scrollToSection(projects);
+    } else if (location.pathname === '/resume') {
+      scrollToSection(resume);
     } else if (location.pathname === '/contact') {
       scrollToSection(contact);
     }
     // Add dependencies to the dependency array
-  }, [location, home, about, projects, contact, scrollToSection]); 
+  }, [location, home, about, projects, resume, contact, scrollToSection]); 
 
   const isActive = (path) => {
     return activeSection === path;
@@ -92,6 +97,12 @@ function Sidebar({ sectionRefs }) {
             <Link to='/projects' onClick={() => scrollToSection("/projects")}>
               <span className={styles.textLinkStyle}>Project</span>
               <FaWindowMaximize className={styles.iconLinkStyle} />
+            </Link>
+          </li>
+          <li className={`${styles.linkStyle} ${isActive('/resume') ? styles.activeLinkStyle : ''}`}>
+            <Link to='/resume' onClick={() => scrollToSection("/resume")}>
+              <span className={styles.textLinkStyle}>Resume</span>
+              <FaAddressBook className={styles.iconLinkStyle} />
             </Link>
           </li>
           <li className={`${styles.linkStyle} ${isActive('/contact') ? styles.activeLinkStyle : ''}`}>

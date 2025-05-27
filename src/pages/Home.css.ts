@@ -28,15 +28,28 @@ export const content = style({
   position: 'relative',
 })
 
+export const flexContainer = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '60px',
+  width: '100%',
+  height: '100%',
+  marginLeft: '8vw',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      flexDirection: 'column',
+      gap: '20px',
+      marginRight: 0,
+    },
+  },
+});
+
 
 export const circle = style({
-  position: 'absolute',
-  right: '80px',
-  top: '120px',
   width: '400px',
   height: '400px',
   borderRadius: '50%',
-
   backgroundColor: 'var(--primary-color, defaultColor)',
   filter: 'blur(3px)',
   transition: 'filter 0.5s ease-in-out',
@@ -47,12 +60,8 @@ export const circle = style({
     'screen and (max-width: 600px)': {
       width: '300px',
       height: '300px',
-      top: '60vh',
-      right: '40vw',
-      transform: 'translate(50%, -50%)',
     },
   },
-
 });
 
 export const circleBefore = style({
@@ -68,9 +77,8 @@ export const circleBefore = style({
 
 
 export const img = style({
-  position: 'absolute',
-  width: '400px',
-  height: '400px',
+  width: '100%',
+  height: '100%',
   borderRadius: '50%',
   objectFit: 'cover',
   filter: 'blur(8px)',
@@ -78,12 +86,6 @@ export const img = style({
   ":hover": {
     filter: 'blur(1px)'
   },
-  '@media': {
-    'screen and (max-width: 600px)': {
-      width: '300px',
-      height: '300px',
-    },
-  }
 });
 
 export const text = style({

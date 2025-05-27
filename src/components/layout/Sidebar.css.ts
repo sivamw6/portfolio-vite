@@ -4,10 +4,10 @@ import { vars } from '../../styles/themes.css';
 export const nav = style({
   backgroundColor: vars.colors.semiTransparent,
   height: '75vh',
-  marginLeft : '1vw',
+  marginLeft : '2vw',
   position: 'fixed',
-  width: '120px',
-  boxShadow: vars.shadow['4x'],
+  width: '100px',
+
   zIndex: 1,
   textTransform: 'uppercase', 
   '@media': {
@@ -81,6 +81,6 @@ export const pagesLink = style({
 
 
 export const activeLinkStyle = style({
-  boxShadow: vars.shadow['3x'],
+  boxShadow: '0 6px 4px -4px ' + ' var(--primary-color, defaultColor)',
   transition: 'box-shadow  0.5s ease-in-out',
 });
