@@ -1,5 +1,5 @@
 import  { useState, useEffect } from 'react';
-import { HuePicker } from 'react-color';
+import { SliderPicker } from 'react-color';
 
 import * as styles from './ThemeSwitcher.css';
 
@@ -17,7 +17,8 @@ const ThemeSwitcher = () => {
 
   return (
     <div className={styles.hue}>
-      <HuePicker color={primaryColor} onChange={handlePrimaryColorChange} />
+      
+      <SliderPicker className={styles.huePickerContainer} color={primaryColor} onChange={handlePrimaryColorChange} />
     </div>
   );
 };

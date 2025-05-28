@@ -8,7 +8,12 @@ export const contact = style({
   paddingTop: '100px',
   paddingBottom: '200px',
   display: 'flex',
-  backgroundColor: vars.colors.primary,
+  background: `linear-gradient(
+    to top,
+    ${vars.colors.primary} 0%,
+    ${vars.colors.background} 30%,
+    ${vars.colors.background} 100%
+  )`,
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',

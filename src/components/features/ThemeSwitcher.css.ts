@@ -1,5 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "../../styles/themes.css";
+import { globalStyle } from '@vanilla-extract/css';
 
 export const hue = style({
   width: '20%',
@@ -13,3 +14,9 @@ export const hue = style({
     },
   },
 })
+
+export const huePickerContainer = style({});
+
+globalStyle(`.${huePickerContainer} div[style*="margin-top: 20px"]`, {
+  display: 'none !important',
+});

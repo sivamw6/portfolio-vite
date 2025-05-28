@@ -6,7 +6,13 @@ export const about = style({
   height: '100%',
   marginLeft: "180px",
   paddingBottom: '20px',
-  backgroundColor: vars.colors.primary,
+  paddingTop: '100px',
+  background: `linear-gradient(
+    to bottom,
+    ${vars.colors.primary} 0%,
+    ${vars.colors.background} 10%,
+    ${vars.colors.background} 100%
+  )`,
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',
