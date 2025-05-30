@@ -4,8 +4,9 @@ import debounce from 'lodash.debounce';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FaHome, FaUser, FaWindowMaximize, FaPaperPlane, FaAddressBook } from "react-icons/fa";
+import * as styles from './Sidebar.css';
+import WeatherWidget from '../features/WeatherWidget';
 
-import * as styles from './Sidebar.css'
 
 function Sidebar({ sectionRefs }) {
   // Get the current location using react-router's useLocation hook
@@ -21,9 +22,9 @@ function Sidebar({ sectionRefs }) {
       return '/';
     } else if (scrollPosition < projects.current.offsetTop) {
       return '/about';
-    } else if (scrollPosition < contact.current.offsetTop) {
-      return '/projects';
     } else if (scrollPosition < resume.current.offsetTop) {
+      return '/projects';
+    } else if (scrollPosition < contact.current.offsetTop) {
       return '/resume';
     } else {
       return '/contact';
@@ -43,6 +44,7 @@ function Sidebar({ sectionRefs }) {
     if (elementRef && elementRef.current) {
       elementRef.current.scrollIntoView({ behavior: "smooth" });
     }
+    setActiveSection(page);
   }, [home, about, projects, resume, contact]);
 
   // Add event listener to window to update URL when scrolling
@@ -80,50 +82,60 @@ function Sidebar({ sectionRefs }) {
   return (
     <div>
       <nav className={styles.nav}>
-        <ul className={`${styles.linkContainer} ${styles.pagesLink}`}>
-        <li className={`${styles.linkStyle} ${isActive('/') ? styles.activeLinkStyle : ''}`}>
-          <Link to='/' onClick={() => scrollToSection("/")}>
-            <span className={styles.textLinkStyle}>Home</span>
-            <FaHome className={styles.iconLinkStyle} />
-          </Link>
-        </li>
-        <li className={`${styles.linkStyle} ${isActive('/about') ? styles.activeLinkStyle : ''}`}>
-            <Link to='/about' onClick={() => scrollToSection("/about")}>
-              <span className={styles.textLinkStyle}>About</span>
-              <FaUser className={styles.iconLinkStyle} />
-            </Link>
-          </li>
-          <li className={`${styles.linkStyle} ${isActive('/projects') ? styles.activeLinkStyle : ''}`}>
-            <Link to='/projects' onClick={() => scrollToSection("/projects")}>
-              <span className={styles.textLinkStyle}>Project</span>
-              <FaWindowMaximize className={styles.iconLinkStyle} />
-            </Link>
-          </li>
-          <li className={`${styles.linkStyle} ${isActive('/resume') ? styles.activeLinkStyle : ''}`}>
-            <Link to='/resume' onClick={() => scrollToSection("/resume")}>
-              <span className={styles.textLinkStyle}>Resume</span>
-              <FaAddressBook className={styles.iconLinkStyle} />
-            </Link>
-          </li>
-          <li className={`${styles.linkStyle} ${isActive('/contact') ? styles.activeLinkStyle : ''}`}>
-            <Link to='/contact' onClick={() => scrollToSection("/contact")}>
-              <span className={styles.textLinkStyle}>Contact</span>
-              <FaPaperPlane className={styles.iconLinkStyle} />
-            </Link>
-          </li>
-        </ul>
-        <ul className={`${styles.linkContainer} ${styles.externalLinkContainer}`}>
-          <li>
-            <a className={styles.externalLink} target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mavis-wang-64019b277/">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-          </li>
-          <li>
-            <a className={styles.externalLink} target="_blank" rel="noreferrer" href="https://github.com/sivamw6">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </li>
-        </ul>
+        
+          <div className={`${styles.linkContainer} ${styles.pagesLink}`}>
+            <ul>
+            <li className={`${styles.linkStyle} ${isActive('/') ? styles.activeLinkStyle : ''}`}>
+              <Link to='/' onClick={() => scrollToSection("/")}>
+                <span className={styles.textLinkStyle}>Home</span>
+                <FaHome className={styles.iconLinkStyle} />
+              </Link>
+            </li>
+            <li className={`${styles.linkStyle} ${isActive('/about') ? styles.activeLinkStyle : ''}`}>
+                <Link to='/about' onClick={() => scrollToSection("/about")}>
+                  <span className={styles.textLinkStyle}>About</span>
+                  <FaUser className={styles.iconLinkStyle} />
+                </Link>
+              </li>
+              <li className={`${styles.linkStyle} ${isActive('/projects') ? styles.activeLinkStyle : ''}`}>
+                <Link to='/projects' onClick={() => scrollToSection("/projects")}>
+                  <span className={styles.textLinkStyle}>Project</span>
+                  <FaWindowMaximize className={styles.iconLinkStyle} />
+                </Link>
+              </li>
+              <li className={`${styles.linkStyle} ${isActive('/resume') ? styles.activeLinkStyle : ''}`}>
+                <Link to='/resume' onClick={() => scrollToSection("/resume")}>
+                  <span className={styles.textLinkStyle}>Resume</span>
+                  <FaAddressBook className={styles.iconLinkStyle} />
+                </Link>
+              </li>
+              <li className={`${styles.linkStyle} ${isActive('/contact') ? styles.activeLinkStyle : ''}`}>
+                <Link to='/contact' onClick={() => scrollToSection("/contact")}>
+                  <span className={styles.textLinkStyle}>Contact</span>
+                  <FaPaperPlane className={styles.iconLinkStyle} />
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className={`${styles.linkContainer} ${styles.externalLinkContainer}`}>
+            <ul>
+              <li>
+                <a className={styles.externalLink} target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mavis-wang-64019b277/">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </li>
+              <li>
+                <a className={styles.externalLink} target="_blank" rel="noreferrer" href="https://github.com/sivamw6">
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className={`${styles.linkContainer} ${styles.weatherWidget}`}>
+            <WeatherWidget />
+          </div>
+
+
       </nav>
     </div>
   )

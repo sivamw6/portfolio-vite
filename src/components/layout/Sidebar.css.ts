@@ -3,11 +3,12 @@ import { vars } from '../../styles/themes.css';
 
 export const nav = style({
   backgroundColor: vars.colors.semiTransparent,
-  height: '75vh',
-  marginLeft : '2vw',
+  height: '100vh',
+  width: '180px',
   position: 'fixed',
-  width: '100px',
-
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
   zIndex: 1,
   textTransform: 'uppercase', 
   '@media': {
@@ -59,7 +60,7 @@ export const iconLinkStyle = style({
 });
 
 export const externalLinkContainer = style({
-  bottom: '25px',
+  bottom: '325px',
   left: '50%',
   transform: 'translateX(-50%)',
   
@@ -77,6 +78,14 @@ export const externalLink  = style({
 export const pagesLink = style({
   top: '40%',
   transform: 'translateY(-50%)',
+});
+
+export const weatherWidget = style({
+  bottom: '25px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  
+  fontSize: vars.space['4x'],
 });
 
 

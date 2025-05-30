@@ -14,7 +14,7 @@ const fadeIn = keyframes({
 export const home = style({
   width: '100vw',
   height: '80vh',
-  backgroundColor: vars.colors.primary,
+  background: `linear-gradient(to top, ${vars.colors.primary} 0%, var(--primary-color, defaultColor) 180%)`,
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',

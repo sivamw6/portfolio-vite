@@ -3,7 +3,7 @@ import { vars } from '../styles/themes.css';
 
 export const projects = style({
   width: '90vw',
-  height: '100%',
+  minHeight: '100vh',
   marginLeft: "180px",
   paddingTop: '100px',
   paddingBottom: '400px',
@@ -13,11 +13,9 @@ export const projects = style({
       width: '100vw',
       marginLeft: '0',
       paddingLeft: '70px',
-      height: '100%'
     },
   },
 });
-
 
 export const imgBox = style({
   paddingTop: '100px',
@@ -25,10 +23,11 @@ export const imgBox = style({
   justifyContent: 'center',
   alignItems: 'center',
   gap: vars.space['4x'],
+  flexWrap: 'wrap',
   '@media': {
     'screen and (max-width: 600px)': {
-      flexDirection: 'column', 
-      alignItems: 'center', 
+      flexDirection: 'column',
+      alignItems: 'center',
       gap: vars.space['6x'],
     },
   },
@@ -60,7 +59,14 @@ export const img = style({
   },
 });
 
+export const info = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: vars.space['1x'],
+  marginTop: vars.space['5x'],
+});
+
 export const p = style({
-  display: 'none',
+  display: vars.colors.grey400,
 });
 

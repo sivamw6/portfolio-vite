@@ -39,6 +39,7 @@ export const root = createGlobalTheme(":root", {
     '5x': '40px',
     '6x': '48px',
     '7x': '56px',
+    '8x': '64px',
   },
   fontSizes: {
     '1x': '8px',

@@ -29,6 +29,7 @@ export const content1 = style({
   display: 'flex',
   borderRadius: '10px',
   margin: '100px',
+  backgroundColor: vars.colors.primary,
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
@@ -44,6 +45,7 @@ export const content2 = style({
   display: 'flex',
   borderRadius: '10px',
   marginLeft: '30%',
+  backgroundColor: vars.colors.primary,
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
@@ -59,6 +61,7 @@ export const content3 = style({
   display: 'flex',
   borderRadius: '10px',
   margin: '100px',
+  backgroundColor: vars.colors.primary,
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
@@ -74,6 +77,7 @@ export const content4 = style({
   display: 'flex',
   borderRadius: '10px',
   marginLeft: '45%',
+  backgroundColor: vars.colors.primary,
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
@@ -89,6 +93,7 @@ export const content5 = style({
   display: 'flex',
   borderRadius: '10px',
   margin: '100px',
+  backgroundColor: vars.colors.primary,
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
