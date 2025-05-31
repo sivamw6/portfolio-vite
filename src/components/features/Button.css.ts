@@ -2,7 +2,6 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '../../styles/themes.css';
 
 export const button = style({
-  width: '100%',
   border: 'none',
   padding: vars.space['1x'],
   borderRadius: vars.borderRadius['2x'],

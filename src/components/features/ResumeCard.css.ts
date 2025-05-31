@@ -9,10 +9,14 @@ export const resumeCard = style({
   padding: '1rem',
   borderRadius: vars.borderRadius['2x'],
   boxShadow: vars.shadow['2x'],
+  flexDirection: 'row',
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '60vw',
-      margin: '80px',
+      flexDirection: 'column',
+      alignItems: 'center',
+      width: '90vw',
+      margin: 'auto',
+      textAlign: 'left',
     },
   }
 });
@@ -22,5 +26,12 @@ export const resumeYear = style({
   fontWeight: 'bold',
   margin: vars.space['1x'],
   color: vars.colors.grey400,
+  '@media': {
+    'screen and (max-width: 600px)': {
+      minWidth: 'unset',
+      marginBottom: vars.space['2x'],
+      textAlign: 'left',
+    },
+  },
 });
 

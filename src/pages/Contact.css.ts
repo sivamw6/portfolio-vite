@@ -5,6 +5,7 @@ export const contact = style({
   width: '90vw',
   minHeight: '100vh',
   marginLeft: "180px",
+  marginBottom: '100px',
   paddingTop: '40px',
   background: `linear-gradient(
     to top,
@@ -31,22 +32,33 @@ export const mapImage = style({
   display: 'block',
   margin: '0 auto 2rem auto',
   borderRadius: '18px',
-  maskImage: 'radial-gradient(circle at 50% 50%, #000 70%, transparent 100%)',
+  maskImage: 'radial-gradient(circle at 50% 50%, #000 80%, transparent 100%)',
   WebkitMaskImage: 'radial-gradient(circle at 50% 50%, #000 70%, transparent 100%)',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '120vw',
+      maxWidth: 'none',
+      height: '200px',
+      objectFit: 'cover',
+      borderRadius: '12px',
+      marginLeft: '-10vw',
+      overflow: 'hidden',
+    },
+  },
 });
 
 export const columns = style({
   display: 'flex',
   width: '100%',
   justifyContent: 'center',
-  alignItems: 'flex-start',
+  alignItems: 'center',
   gap: '4vw',
   marginTop: '2rem',
   '@media': {
     'screen and (max-width: 900px)': {
       flexDirection: 'column',
       alignItems: 'center',
-      gap: '2rem',
+      gap: '3rem',
     },
   },
 });
@@ -58,7 +70,12 @@ export const leftCol = style({
   gap: vars.space['1x'],
   alignItems: 'flex-start',
   marginLeft: vars.space['2x'],
-  fontSize: vars.fontSizes['3x']
+  fontSize: vars.fontSizes['3x'],
+  '@media': {
+    'screen and (max-width: 600px)': {
+      fontSize: '14px',
+    },
+  },
 });
 
 export const iconLink = style({
@@ -73,6 +90,12 @@ export const rightCol = style({
   minWidth: '350px',
   maxWidth: '500px',
   width: '100%',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '90vw',
+      marginLeft: '0',
+    },
+  },
 });
 
 export const content = style({
@@ -91,11 +114,10 @@ export const formBox = style({
   width: '450px',
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '60vw',
-      marginLeft: '10vw',
+      width: '90vw',
+      marginLeft: '0',
     },
   },
-
 })
 
 export const button = style({
@@ -140,39 +162,9 @@ export const icon = style({
   minWidth: '1.4rem',
 });
 
-export const giphyBox = style({
-  display: 'flex',
-  gap: '2rem',
-  margin: '1.5rem 0',
+export const formWrapper = style({
+  position: 'relative',
+  width: '100%',
+  minHeight: '400px',
 });
 
-export const giphyColLeft = style({
-  display: 'flex',
-  flexDirection: 'row',
-  gap: vars.space['1x'],
-  alignItems: 'center',
-});
-
-export const emojiBtn = style({
-  fontSize: '1.2rem',
-  background: 'none',
-  border: 'none',
-  cursor: 'pointer',
-  transition: 'transform 0.1s',
-  ':hover': {
-    transform: 'scale(1.2)',
-  },
-});
-
-export const giphyColRight = style({
-  display: 'flex',
-  alignItems: 'center',
-  gap: '0.5rem',
-});
-
-export const giphyResultBox = style({
-  display: 'flex',
-  gap: '0.5rem',
-  flexWrap: 'wrap',
-  marginTop: '1rem',
-});

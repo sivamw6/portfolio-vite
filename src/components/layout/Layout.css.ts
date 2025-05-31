@@ -25,11 +25,14 @@ export const app2 = style({
 
 export const appContent = style({
 
-  width: "100%",
-  overflow: 'auto',
+  overflowX: 'hidden',
   '@media': {
     'screen and (max-width: 600px)': {
-      // marginLeft: '20px', 
+      width: '100%',
+      maxWidth: '100vw',
+      marginLeft: '0',
+      overflowX: 'hidden',
+      
     },
   }
 })

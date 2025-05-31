@@ -13,8 +13,10 @@ export const resume = style({
     'screen and (max-width: 600px)': {
       width: '100vw',
       marginLeft: '0',
-      paddingLeft: '70px',
-      height: '100%'
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      paddingBottom: '100px',
     },
   },
 });
@@ -28,6 +30,14 @@ export const flexContainer = style({
     'screen and (max-width: 900px)': {
       flexDirection: 'column',
       gap: '2rem',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    'screen and (max-width: 600px)': {
+      flexDirection: 'column',
+      gap: '2rem',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   },
 });
@@ -36,12 +46,34 @@ export const leftColumn = style({
   flex: 1,
   minWidth: '320px',
   maxWidth: '600px',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      margin: '0 auto',
+      minWidth: '0',
+      width: '90vw',
+      maxWidth: '600px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+  },
 });
 
 export const rightColumn = style({
   flex: 1,
   minWidth: '320px',
   maxWidth: '600px',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      margin: '0 auto',
+      minWidth: '0',
+      width: '90vw',
+      maxWidth: '600px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+  },
 });
 
 

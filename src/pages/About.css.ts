@@ -17,7 +17,6 @@ export const about = style({
     'screen and (max-width: 600px)': {
       width: '100vw',
       marginLeft: '0',
-      paddingLeft: '70px',
       height: '100%'
     },
   },
@@ -33,7 +32,7 @@ export const content1 = style({
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '50vw',
+      width: '75vw',
       margin: '40px',
 
     },
@@ -49,8 +48,8 @@ export const content2 = style({
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '60vw',
-      margin: '80px',
+      width: '70vw',
+      margin: '85px',
     },
   }
 })
@@ -65,7 +64,7 @@ export const content3 = style({
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '50vw',
+      width: '70vw',
       margin: '40px',
     },
   }
@@ -81,7 +80,7 @@ export const content4 = style({
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '60vw',
+      width: '75vw',
       margin: '80px',
     },
   }})
@@ -97,7 +96,7 @@ export const content5 = style({
   boxShadow: vars.shadow['2x'],
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '50vw',
+      width: '75vw',
       margin: '40px',
     },
   }

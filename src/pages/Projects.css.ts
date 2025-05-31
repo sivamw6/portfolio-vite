@@ -12,7 +12,6 @@ export const projects = style({
     'screen and (max-width: 600px)': {
       width: '100vw',
       marginLeft: '0',
-      paddingLeft: '70px',
     },
   },
 });
@@ -28,7 +27,8 @@ export const imgBox = style({
     'screen and (max-width: 600px)': {
       flexDirection: 'column',
       alignItems: 'center',
-      gap: vars.space['6x'],
+      gap: vars.space['2x'],
+      paddingTop: '0',
     },
   },
 });

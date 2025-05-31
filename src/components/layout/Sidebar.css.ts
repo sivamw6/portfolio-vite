@@ -6,18 +6,25 @@ export const nav = style({
   height: '100vh',
   width: '180px',
   position: 'fixed',
+  left: 0,
+  top: 0,
+  zIndex: 2000,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  zIndex: 1,
-  textTransform: 'uppercase', 
+  textTransform: 'uppercase',
+  transition: 'left 0.3s',
   '@media': {
     'screen and (max-width: 600px)': {
-      height: '50vh',
-      width: '50px',
-      color: 'black',
+      width: '80px',
+      minWidth: '80px',
+      maxWidth: '320px',
+      left: '-100vw', // 預設隱藏
+      background: '#fff',
+      boxShadow: '2px 0 16px rgba(0,0,0,0.08)',
+      zIndex: 2000,
     },
-}
+  }
 });
 
 export const linkContainer = style({
@@ -65,6 +72,15 @@ export const externalLinkContainer = style({
   transform: 'translateX(-50%)',
   
   fontSize: vars.space['4x'],
+  '@media': {
+    'screen and (max-width: 600px)': {
+      position: 'static',
+      transform: 'none',
+      fontSize: '1.3rem',
+      marginTop: 'auto',
+      marginBottom: '1rem',
+    },
+  }
 });
 
 export const externalLink  = style({
@@ -86,10 +102,72 @@ export const weatherWidget = style({
   transform: 'translateX(-50%)',
   
   fontSize: vars.space['4x'],
+  '@media': {
+    'screen and (max-width: 600px)': {
+      position: 'static',
+      transform: 'none',
+      fontSize: '1.3rem',
+      marginBottom: '1rem',
+    },
+  }
 });
 
 
 export const activeLinkStyle = style({
   boxShadow: '0 6px 4px -4px ' + ' var(--primary-color, defaultColor)',
   transition: 'box-shadow  0.5s ease-in-out',
+});
+
+export const hamburger = style({
+  display: 'none',
+  position: 'fixed',
+  top: '20px',
+  left: '20px',
+  zIndex: 1001,
+  width: '32px',
+  height: '32px',
+  background: 'none',
+  border: 'none',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  cursor: 'pointer',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      display: 'flex',
+
+    },
+  },
+});
+
+export const hamburgerLine = style({
+  width: '28px',
+  height: '4px',
+  background: '#333',
+  margin: '3px 0',
+  borderRadius: '2px',
+});
+
+export const overlay = style({
+  display: 'none',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      display: 'block',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      background: 'rgba(0,0,0,0.3)',
+      zIndex: 1999,
+    },
+  },
+});
+
+export const open = style({
+  '@media': {
+    'screen and (max-width: 600px)': {
+      left: 0,
+    },
+  },
 });

@@ -24,7 +24,8 @@ globalStyle("html:focus-within", {
 globalStyle("body", {
   fontFamily: 'Open Sans, sans-serif',
   minHeight: "100vh",
-
+  maxWidth: "100vw",
+  overflowX: "hidden",
   textRendering: "optimizeSpeed",
   lineHeight: 1.5,
 });
@@ -55,3 +56,9 @@ globalStyle("ul, ol", {
   padding: 0,
   margin: 0
 })
+
+globalStyle("html", {
+  width: "100vw",
+  maxWidth: "100vw",
+  overflowX: "hidden",
+});

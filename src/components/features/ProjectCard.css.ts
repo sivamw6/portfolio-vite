@@ -12,6 +12,16 @@ export const projectCard = style({
   minWidth: '280px',
   maxWidth: '350px',
   height: '250px',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      width: '90vw',
+      minWidth: 'unset',
+      maxWidth: '100vw',
+      margin: '0 auto 1.5rem auto',
+      alignItems: 'center',
+      height: 'auto',
+    },
+  },
 });
 
 export const imgReflectWrapper = style({
@@ -66,4 +76,10 @@ export const githubInfo = style({
   marginTop: vars.space['8x'],
   padding: vars.space['2x'],
   fontSize: '0.95rem',
+  borderRadius: vars.borderRadius['2x'],
+  '@media': {
+    'screen and (max-width: 600px)': {
+      marginTop: '0'
+    },
+  },
 });

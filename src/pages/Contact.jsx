@@ -7,26 +7,17 @@ import { db } from '../firebase';
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 import Button from '../components/features/Button';
-import { searchGiphy } from '../api/giphy';
+import GiphyPicker from '../components/features/GiphyPicker';
 
-const emojis = [
-  { label: 'happy', emoji: '😄' },
-  { label: 'sad', emoji: '😢' },
-  { label: 'angry', emoji: '😡' },
-  { label: 'love', emoji: '😍' },
-  { label: 'excited', emoji: '🤩' },
-  { label: 'expect', emoji: '🤔' },
-  // ...你可以再加更多
-];
+
 
 const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [ showMessage, setShowMessage ] = useState(false);
   const [name, setName] = useState('');
-  const [giphyQuery, setGiphyQuery] = useState('');
-  const [giphyResults, setGiphyResults] = useState([]);
-  const [selectedGif, setSelectedGif] = useState(null);
+  const [confirmedGif, setConfirmedGif] = useState(null);
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,13 +26,14 @@ const Contact = () => {
         name,
         email,
         message,
-        giphy: selectedGif || null,
+        giphy: confirmedGif || null,
         created: Timestamp.now()
       });
       setShowMessage(true);
       setName('');
       setEmail('');
       setMessage('');
+      setConfirmedGif(null);
     } catch (e) {
       alert("送出失敗，請稍後再試！");
       console.error("Error adding document: ", e);
@@ -50,7 +42,7 @@ const Contact = () => {
 
   return (
     <div className={styles.contact}>
-      <h1 className="ms-5 mb-5">Contact Me</h1>
+      <h1 className="ms-5 mb-5">Get in Touch</h1>
       <img src="/map.png" alt="Map" className={styles.mapImage} />
       <div className={styles.columns}>
         <div className={styles.leftCol}>
@@ -94,109 +86,79 @@ const Contact = () => {
           {/* 你可以再加其他社群 */}
         </div>
         <div className={styles.rightCol}>
-          <Form>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Name</Form.Label>
-              <Form.Control 
-              type="text"
-              placeholder="Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}              
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control 
-              type="email"
-              placeholder="Your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}              
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Message</Form.Label>
-              <Form.Control 
-              as="textarea"
-              rows={3}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}              
-              />
-            </Form.Group>
-            <div className={styles.giphyBox}>
-              <div className={styles.giphyColLeft}>
-                {/* Emoji 按鈕 */}
-                {emojis.map(({ label, emoji }) => (
-                  <Button
-                    key={label}
-                    type="button"
-                    className={styles.emojiBtn}
-                    onClick={async () => {
-                      setGiphyQuery(label);
-                      const gifs = await searchGiphy(label);
-                      setGiphyResults(gifs);
-                    }}
-                  >
-                    <span role="img" aria-label={label}>{emoji}</span>
-                  </Button>
-                ))}
-              </div>
-              <div className={styles.giphyColRight}>
-                {/* 搜尋欄 */}
-                <Form.Control
-                  type="text"
-                  placeholder="Search GIF"
-                  value={giphyQuery}
-                  onChange={e => setGiphyQuery(e.target.value)}
-                  onKeyDown={async (e) => {
-                    if (e.key === 'Enter') {
-                      const gifs = await searchGiphy(giphyQuery);
-                      setGiphyResults(gifs);
-                    }
-                  }}
+          <div className={styles.formWrapper}>
+            <Form>
+              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Label>Name</Form.Label>
+                <Form.Control 
+                type="text"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}              
                 />
-                <Button
-                  type="button"
-                  onClick={async () => {
-                    const gifs = await searchGiphy(giphyQuery);
-                    setGiphyResults(gifs);
-                  }}
-                  style={{ marginLeft: '0.5rem' }}
-                >
-                  Search
-                </Button>
-              </div>
-            </div>
-            {/* GIF 結果區 */}
-            {giphyResults.length > 0 && (
-              <div className={styles.giphyResultBox}>
-                {giphyResults.map(gif => (
-                  <img
-                    key={gif.id}
-                    src={gif.images.fixed_height_small.url}
-                    alt={gif.title}
-                    style={{
-                      border: selectedGif === gif.images.fixed_height_small.url ? '2px solid #6cf26c' : '2px solid transparent',
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      width: '80px',
-                      height: '80px',
-                      objectFit: 'cover'
-                    }}
-                    onClick={() => setSelectedGif(gif.images.fixed_height_small.url)}
-                  />
-                ))}
-              </div>
-            )}
-            <Button className={styles.button} onClick={(event) => handleSubmit(event)}>
-              Submit
-            </Button>
-            {showMessage && (
-              <div className={styles.messageBox}> 
-                Your message has been submitted, I will reply you soon!
-                <hr />
-              </div>
-            )}
-          </Form>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control 
+                type="email"
+                placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}              
+                />
+              </Form.Group>
+              <GiphyPicker
+                value={confirmedGif}
+                onChange={url => setConfirmedGif(url)}
+                label="Emotion"
+              />
+              <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Message</Form.Label>
+                <Form.Control 
+                as="textarea"
+                rows={3}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}              
+                />
+                {confirmedGif && (
+                  <div style={{ position: 'relative', margin: '1rem 0', display: 'inline-block' }}>
+                    <img src={confirmedGif} alt="Selected GIF" style={{ width: 120, borderRadius: 8 }} />
+                    <button
+                      onClick={() => setConfirmedGif(null)}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        right: 0,
+                        background: 'rgba(0,0,0,0.6)',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: 24,
+                        height: 24,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 16,
+                        zIndex: 1,
+                      }}
+                      aria-label="取消選取貼圖"
+                    >
+                      ×
+                    </button>
+                  </div>
+                )}
+              </Form.Group>
+              <Button className={styles.button} onClick={(event) => handleSubmit(event)}>
+                Submit
+              </Button>
+              {showMessage && (
+                <div className={styles.messageBox}> 
+                  Your message has been submitted, I will reply you soon!
+                  <hr />
+                </div>
+              )}
+            </Form>
+          </div>
         </div>
       </div>
     </div>

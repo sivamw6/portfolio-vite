@@ -18,7 +18,9 @@ export const home = style({
   '@media': {
     'screen and (max-width: 600px)': {
       width: '100vw',
-      height: '100vh'
+      height: '100vh',
+      marginLeft: '0',
+      paddingLeft: '0',
     },
   },
 })
@@ -41,6 +43,7 @@ export const flexContainer = style({
       flexDirection: 'column',
       gap: '20px',
       marginRight: 0,
+      marginLeft: '0',
     },
   },
 });
@@ -53,6 +56,7 @@ export const circle = style({
   backgroundColor: 'var(--primary-color, defaultColor)',
   filter: 'blur(3px)',
   transition: 'filter 0.5s ease-in-out',
+
   ":hover": {
     filter: 'blur(0px)'
   },
@@ -60,6 +64,7 @@ export const circle = style({
     'screen and (max-width: 600px)': {
       width: '300px',
       height: '300px',
+      
     },
   },
 });

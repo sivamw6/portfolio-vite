@@ -3,48 +3,50 @@ import SlideInAnimation from '../components/features/SlideInAnimation'
 
 function About() {
   return (
-<div className={styles.about}> 
-  <h1 className='ms-5'>About Me...</h1>
-  <SlideInAnimation>
-    <div className={styles.content1}>
-      <p className={styles.p}>
-        Hello, I&apos;m Mavis Wang, a dedicated IT professional specializing in web development and IT support. Since June 2023, I&apos;ve been working at Rickpeck Pty Ltd as an IT Support Specialist, where I manage various technical issues and ensure smooth IT operations.
-      </p>
-    </div>
-  </SlideInAnimation>
+    <div className={styles.about}> 
+      <h1 className="ms-5">About Me</h1>
 
-  <SlideInAnimation>
-    <div className={styles.content2}>
-      <p className={styles.p}>
-        My experience ranges from crafting user-centric websites to developing complex web applications. I thrive on challenges and enjoy translating creative ideas into functional and accessible web solutions. I am proficient in various JavaScript frameworks, including React, Vue, and Angular.
-      </p>
-    </div>
-  </SlideInAnimation>
+      <SlideInAnimation>
+        <div className={styles.content1}>
+          <p className={styles.p}>
+            Hi! I’m Mavis Wang — a web developer and IT enthusiast based in Australia. I’m currently pursuing a Master of Information Technology (Computer Science) at Queensland University of Technology, where I’m expanding my expertise in software design, data structures, and emerging technologies.
+          </p>
+        </div>
+      </SlideInAnimation>
 
-  <SlideInAnimation>
-    <div className={styles.content3}>
-      <p className={styles.p}>
-        At Holmesglen Institute, I took the lead in UI/UX design for &apos;react-handy-modal&apos;, a customizable UI component package. I&apos;m also proud of my work on &apos;Bubble Breeze&apos;, a full-stack e-commerce platform I developed using the FERN stack.
-      </p>
-    </div>
-  </SlideInAnimation>
+      <SlideInAnimation>
+        <div className={styles.content2}>
+          <p className={styles.p}>
+            My professional journey began in the tourism industry, but I transitioned into tech to pursue more meaningful, problem-solving work. Since 2023, I’ve worked as an IT Support Specialist at Rickpeck Pty Ltd, helping streamline internal systems and resolve technical challenges efficiently.
+          </p>
+        </div>
+      </SlideInAnimation>
 
-  <SlideInAnimation>
-    <div className={styles.content4}>
-      <p className={styles.p}>
-        I am also actively involved in volunteer work. I contribute as a Web Developer at VicWise, where I help design and maintain their website. Additionally, I volunteer as an iPad Tutor at Boroondara Community Library, assisting community members with their tech needs.
-      </p>
-    </div>
-  </SlideInAnimation>
+      <SlideInAnimation>
+        <div className={styles.content3}>
+          <p className={styles.p}>
+            As a developer, I’m passionate about creating clean, accessible, and intuitive web interfaces. I’ve built projects using modern JavaScript frameworks such as React, Vue, and Angular, and enjoy designing full-stack solutions that are both functional and elegant.
+          </p>
+        </div>
+      </SlideInAnimation>
 
-  <SlideInAnimation>
-    <div className={styles.content5}>
-      <p className={styles.p}>
-        Currently, I am pursuing a Master of Information Technology in Computer Science at Queensland University of Technology (QUT). In my free time, I&apos;m either exploring new technologies or keeping abreast of the latest trends in web development. My goal is to continuously advance my technical skills and contribute to innovative web solutions.
-      </p>
+      <SlideInAnimation>
+        <div className={styles.content4}>
+          <p className={styles.p}>
+            I’m also actively involved in volunteer work — contributing as a Web Developer at VicWise and offering digital support as an iPad Tutor at Boroondara Community Library. These roles allow me to apply my skills in real-world settings while giving back to the community.
+          </p>
+        </div>
+      </SlideInAnimation>
+
+      <SlideInAnimation>
+        <div className={styles.content5}>
+          <p className={styles.p}>
+            Whether I’m debugging code or mentoring others, I approach every challenge with curiosity and care. I’m continuously improving my technical abilities while working on personal projects, open-source contributions, and hands-on coursework. My goal? To become a developer who blends technical precision with human-centered design.
+          </p>
+        </div>
+      </SlideInAnimation>
     </div>
-  </SlideInAnimation>
-</div>  )
+  );
 }
 
 export default About
