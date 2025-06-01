@@ -7,6 +7,10 @@ import ThemeSwitcher from '../features/ThemeSwitcher'
 import Sidebar from './Sidebar'
 import Foorter from './Footer'
 
+/**
+ * Layout component for the main app structure, including sidebar, theme switcher, and content outlet.
+ * @param {object} sectionRefs - References to page sections for navigation
+ */
 function Layout({ sectionRefs }) {
   const [themeColor, setThemeColor] = useState('');
 

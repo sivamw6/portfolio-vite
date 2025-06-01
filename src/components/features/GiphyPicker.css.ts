@@ -117,3 +117,20 @@ export const searchInput = style({
     },
   },
 });
+
+export const formLabel = style({
+  marginBottom: 4,
+  display: 'block',
+  fontWeight: 500,
+  fontSize: '1rem',
+});
+
+export const errorMsg = style({
+  color: 'red',
+  marginBottom: 8,
+  fontSize: '0.95rem',
+});
+
+export const searchBtn = style({
+  marginLeft: '0.5rem',
+});

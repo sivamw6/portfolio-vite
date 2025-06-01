@@ -3,6 +3,9 @@ import ResumeSection from '../components/features/ResumeSection';
 import { getResumeData } from '../api/resume';
 import Button from '../components/features/Button';
 
+/**
+ * Resume page component displaying education and experience sections.
+ */
 function Resume() {
   const { education, experience } = getResumeData();
 

@@ -14,20 +14,38 @@ const emojis = [
 
 const GIPHY_LIMIT = 8;
 
+/**
+ * GiphyPicker component allows users to search and select GIFs from Giphy API.
+ * @param {function} onChange - Callback when a GIF is selected
+ * @param {string} label - Label for the picker
+ */
 export default function GiphyPicker({ onChange, label = "Emotion" }) {
   const [giphyQuery, setGiphyQuery] = useState('');
   const [giphyResults, setGiphyResults] = useState([]);
+  const [error, setError] = useState('');
 
-  // 搜尋/emoji 點擊
+  /**
+   * Search Giphy API for GIFs based on the query string.
+   * @param {string} query - The search keyword
+   */
   const handleSearch = async (query) => {
     setGiphyQuery(query);
-    const gifs = await searchGiphy(query, 0, GIPHY_LIMIT);
-    setGiphyResults(gifs);
+    setError('');
+    try {
+      const gifs = await searchGiphy(query, 0, GIPHY_LIMIT);
+      setGiphyResults(gifs);
+    } catch (err) {
+      setError('Search failed. Please try again.');
+      setGiphyResults([]);
+    }
   };
 
   return (
     <div>
-      <label className="form-label" style={{ marginBottom: 4 }}>{label}</label>
+      <label className={styles.formLabel}>{label}</label>
+      {error && (
+        <div className={styles.errorMsg}>{error}</div>
+      )}
       <div className={styles.giphyBox}>
         <div className={styles.giphyColLeft}>
           {emojis.map(({ label, emoji }) => (
@@ -52,13 +70,12 @@ export default function GiphyPicker({ onChange, label = "Emotion" }) {
                 await handleSearch(giphyQuery);
               }
             }}
-            className="form-control"
-            style={{ width: 120 }}
+            className={styles.searchInput}
           />
           <Button
             type="button"
             onClick={() => handleSearch(giphyQuery)}
-            style={{ marginLeft: '0.5rem' }}
+            className={styles.searchBtn}
           >
             Search
           </Button>

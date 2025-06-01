@@ -6,7 +6,10 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FaHome, FaUser, FaWindowMaximize, FaPaperPlane, FaAddressBook } from "react-icons/fa";
 import * as styles from './Sidebar.css';
 
-
+/**
+ * Sidebar component for navigation and social links.
+ * @param {object} sectionRefs - References to page sections for scroll navigation
+ */
 function Sidebar({ sectionRefs }) {
   // Get the current location using react-router's useLocation hook
   const location = useLocation();
@@ -15,7 +18,10 @@ function Sidebar({ sectionRefs }) {
   
   const { home, about, projects, resume, contact } = sectionRefs;
 
-  // Define the function to determine the active section based on scroll position
+  /**
+   * Determines the active section based on the current scroll position.
+   * @returns {string} The path of the active section
+   */
   const determineActiveSection = useCallback(() => {
     const scrollPosition = window.scrollY;
     if (scrollPosition < about.current.offsetTop) {
@@ -31,7 +37,10 @@ function Sidebar({ sectionRefs }) {
     }
   }, [about, projects, resume, contact]);
 
-  // Function to scroll to the given section
+  /**
+   * Scrolls smoothly to the given section and updates the active section.
+   * @param {string} page - The path of the section to scroll to
+   */
   const scrollToSection = useCallback((page) => {
     const elementRef =
       page === "/" ? home
@@ -75,6 +84,11 @@ function Sidebar({ sectionRefs }) {
     // Add dependencies to the dependency array
   }, [location, home, about, projects, resume, contact, scrollToSection]); 
 
+  /**
+   * Checks if the given path is the currently active section.
+   * @param {string} path - The path to check
+   * @returns {boolean}
+   */
   const isActive = (path) => {
     return activeSection === path;
   };

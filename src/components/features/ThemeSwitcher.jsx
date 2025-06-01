@@ -3,8 +3,16 @@ import { SliderPicker } from 'react-color';
 
 import * as styles from './ThemeSwitcher.css';
 
+/**
+ * Checks if the current device is mobile based on window width.
+ * @returns {boolean}
+ */
 const isMobile = () => window.innerWidth <= 600;
 
+/**
+ * ThemeSwitcher component allows users to change the primary theme color.
+ * On mobile, it auto-rotates the color.
+ */
 const ThemeSwitcher = () => {
   const [primaryColor, setPrimaryColor] = useState('#e6b3b8');
   const [show, setShow] = useState(!isMobile());
@@ -15,16 +23,16 @@ const ThemeSwitcher = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // 自動變色
+  // Auto color rotation for mobile devices
   useEffect(() => {
-    if (show) return; // 只在 mobile 下自動變色
+    if (show) return; // Only auto-rotate on mobile
     let hue = Math.floor(Math.random() * 360);
     let timer = setInterval(() => {
       hue = (hue + 2) % 360;
       const color = `hsl(${hue}, 70%, 80%)`;
       setPrimaryColor(color);
       document.documentElement.style.setProperty('--primary-color', color);
-    }, 70); // 速度可調整
+    }, 70); // Adjust speed as needed
     return () => clearInterval(timer);
   }, [show]);
   

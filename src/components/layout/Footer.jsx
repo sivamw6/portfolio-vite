@@ -1,5 +1,8 @@
 import * as styles from './Footer.css'
 
+/**
+ * Footer component displaying copyright and year.
+ */
 function Footer() {
   const currentYear = new Date().getFullYear();
   

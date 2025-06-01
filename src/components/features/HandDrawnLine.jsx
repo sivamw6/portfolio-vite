@@ -1,7 +1,11 @@
+import { handDrawnLineSvg } from './HandDrawnLine.css';
 
-function HandDrawnLine({style = {}}) {
+/**
+ * HandDrawnLine renders a hand-drawn style SVG line for decorative purposes.
+ */
+function HandDrawnLine() {
   return (
-    <svg width="250" height="20" viewBox="0 0 200 20" style={style}>
+    <svg width="250" height="20" viewBox="0 0 200 20" className={handDrawnLineSvg}>
       <path
         d="M5 15 Q 50 5, 100 15 T 195 15"
         stroke="var(--primary-color, defaultColor)"
