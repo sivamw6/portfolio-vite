@@ -8,21 +8,21 @@ const projects = [
     repo: "sivamw6/BubblelBreeze",
     image: bubbleBreeze,
     demo: "https://github.com/sivamw6/BubblelBreeze",
-    label: "PHP CRUD",
+    language: "React, JavaScript",
   },
   {
     name: "Decor Life",
     repo: "sivamw6/DecorLife",
     image: bootstrapWebsite,
     demo: "https://decor-life-five.vercel.app/",
-    label: "Bootstrap",
+    language: "Tailwind CSS, Bootstrap",
   },
   {
     name: "Asia Venture",
     repo: "sivamw6/asia-venture",
     image: asiaVenture,
     demo: "https://asia-venture.vercel.app/",
-    label: "Next.js",
+    language: "JavaScript, Nest.js",
   },
 ];
 

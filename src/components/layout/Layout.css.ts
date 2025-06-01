@@ -6,6 +6,9 @@ export const app = style({
   display: "flex",
   flexDirection: "column",
   minHeight: "100vh", 
+  width: "100vw",
+  maxWidth: "100vw",
+  overflowX: "hidden",
   backgroundColor: vars.colors.primary,
 
   '@media': {
@@ -20,17 +23,21 @@ export const app2 = style({
   flexDirection: "row",
   flex: 1,
   minHeight: 0,
-  height: '100vh'
+  height: '100vh',
+  width: '100vw',
+  maxWidth: '100vw',
+  overflowX: 'hidden',
 })
 
 export const appContent = style({
-
+  width: '100vw',
+  maxWidth: '100vw',
   overflowX: 'hidden',
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '100%',
+      width: '100vw',
       maxWidth: '100vw',
-      marginLeft: '0',
+
       overflowX: 'hidden',
       
     },

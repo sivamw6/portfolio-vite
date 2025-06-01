@@ -37,7 +37,7 @@ export const projectImg = style({
   boxShadow: vars.shadow['4x'],
   transformOrigin: 'center',
   transform: 'perspective(500px) rotateY(20deg)',
-  WebkitBoxReflect: 'below 3px linear-gradient(transparent, transparent, rgba(255,255,255,0.68))',
+  WebkitBoxReflect: 'below 3px linear-gradient(transparent, transparent, rgba(255,255,255,0.2))',
   transition: '0.6s',
   opacity: 0.7,
   selectors: {
@@ -81,5 +81,14 @@ export const githubInfo = style({
     'screen and (max-width: 600px)': {
       marginTop: '0'
     },
+  },
+});
+
+export const githubLink = style({
+  color: vars.colors.grey600,
+  textDecoration: 'none',
+  transition: 'text-decoration 0.2s',
+  ':hover': {
+    textDecoration: 'underline',
   },
 });

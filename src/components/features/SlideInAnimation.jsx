@@ -15,7 +15,7 @@ const SlideInAnimation = ({ children }) => {
           setIsVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     if (currentRef) {

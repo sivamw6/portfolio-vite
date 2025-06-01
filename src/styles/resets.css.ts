@@ -25,6 +25,7 @@ globalStyle("body", {
   fontFamily: 'Open Sans, sans-serif',
   minHeight: "100vh",
   maxWidth: "100vw",
+  width: "100vw",
   overflowX: "hidden",
   textRendering: "optimizeSpeed",
   lineHeight: 1.5,

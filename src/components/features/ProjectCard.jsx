@@ -11,7 +11,7 @@ const ProjectCard = ({ project, github }) => {
       <h3 className={styles.label}>{project.name}</h3>
       <div className={styles.imgReflectWrapper}>
         {linkUrl ? (
-          <a href={linkUrl} target="_blank" rel="noopener noreferrer">
+          <a href={linkUrl} target="_blank" rel="noopener noreferrer" className={styles.githubLink}>
             <img className={styles.projectImg} src={project.image} alt={project.name} />
           </a>
         ) : (
@@ -21,11 +21,11 @@ const ProjectCard = ({ project, github }) => {
       <div className={styles.info}>
         {github && (
           <div className={styles.githubInfo}>
-            <a href={github.html_url} target="_blank" rel="noopener noreferrer">
-              GitHub
+            <a href={github.html_url} target="_blank" rel="noopener noreferrer" className={styles.githubLink}>
+              👉🏻 GitHub Link
             </a>
-            <div>Language：{github.language}</div>
-            <div>Description：{github.description}</div>
+            <div><strong>Language：</strong>{project.language}</div>
+            <div><strong>Description：</strong>{github.description}</div>
           </div>
         )}
       </div>
