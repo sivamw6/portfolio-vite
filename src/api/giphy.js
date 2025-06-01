@@ -1,4 +1,5 @@
-const GIPHY_API_KEY = "51O7T2NWL2xFdPMiW5zuS0sYVpkT6LYV";
+// Giphy API key is now loaded from environment variables
+const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 
 /**
  * Search GIFs from Giphy API by keyword.
