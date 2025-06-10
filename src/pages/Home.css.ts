@@ -56,7 +56,7 @@ export const circle = style({
   backgroundColor: 'var(--primary-color, defaultColor)',
   filter: 'blur(3px)',
   transition: 'filter 0.5s ease-in-out',
-
+  position: 'relative',
   ":hover": {
     filter: 'blur(0px)'
   },

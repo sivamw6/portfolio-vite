@@ -1,7 +1,7 @@
 import * as styles from './ProjectCard.css';
 
 const ProjectCard = ({ project, github }) => {
-  // 取得圖片要連結的網址
+
   const linkUrl = github
     ? (github.homepage && github.homepage.trim() !== '' ? github.homepage : github.html_url)
     : undefined;

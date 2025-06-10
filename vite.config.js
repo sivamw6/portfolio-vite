@@ -6,4 +6,7 @@ import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 export default defineConfig({
   plugins: [react(), vanillaExtractPlugin()],
   assetsInclude: ["**/*.jpg"],
+  server: {
+    host: true,
+  },
 });
