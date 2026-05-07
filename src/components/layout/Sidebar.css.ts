@@ -96,22 +96,6 @@ export const pagesLink = style({
   transform: 'translateY(-50%)',
 });
 
-export const weatherWidget = style({
-  bottom: '25px',
-  left: '50%',
-  transform: 'translateX(-50%)',
-  
-  fontSize: vars.space['4x'],
-  '@media': {
-    'screen and (max-width: 600px)': {
-      position: 'static',
-      transform: 'none',
-      fontSize: '1.3rem',
-      marginBottom: '1rem',
-    },
-  }
-});
-
 
 export const activeLinkStyle = style({
   boxShadow: '0 6px 4px -4px ' + ' var(--primary-color, defaultColor)',

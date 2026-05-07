@@ -54,14 +54,6 @@ export const root = createGlobalTheme(":root", {
     bold: "600",
     bolder: "700",
   },
-  slideToMiddle : keyframes({
-    'from': { bottom: '0' },
-    'to': { bottom: '40%' }
-  }),
-  slideToBottom : keyframes({
-    'from': { bottom: '-40px' },
-    'to': { bottom: '0' }
-  }),
   shadow : {
     '1x': '0 0 4px 0 var(--primary-color, defaultColor)',
     '2x': '0 0 8px 0 var(--primary-color, defaultColor)',

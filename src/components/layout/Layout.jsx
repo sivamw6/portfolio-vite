@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router-dom'
-import { useState } from 'react'
 
 import * as styles from './Layout.css'
 
@@ -12,12 +11,9 @@ import Foorter from './Footer'
  * @param {object} sectionRefs - References to page sections for navigation
  */
 function Layout({ sectionRefs }) {
-  const [themeColor, setThemeColor] = useState('');
-
   return (
     <div className={styles.app}>
-      <ThemeSwitcher themeColor={themeColor} setThemeColor={setThemeColor}>
-      </ThemeSwitcher>
+      <ThemeSwitcher />
       <div className={styles.app2}>
         <Sidebar sectionRefs={sectionRefs} />
         <div className={styles.appContent}>

@@ -1,8 +1,8 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../styles/themes.css'; 
+import { vars } from '../styles/themes.css';
 
 export const about = style({
-  width: '90vw',
+  width: 'calc(100vw - 180px)',
   height: '100%',
   marginLeft: "180px",
   paddingBottom: '20px',
@@ -22,87 +22,57 @@ export const about = style({
   },
 })
 
-export const content1 = style({
-  width: '30vw',
+const contentBase = {
   height: '100%',
   display: 'flex',
   borderRadius: '10px',
-  margin: '100px',
   backgroundColor: vars.colors.primary,
   boxShadow: vars.shadow['2x'],
-  '@media': {
-    'screen and (max-width: 600px)': {
-      width: '75vw',
-      margin: '40px',
+};
 
-    },
-  },})
+const mobileCard = {
+  'screen and (max-width: 600px)': {
+    width: '80vw',
+    margin: '20px auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+};
+
+export const content1 = style({
+  ...contentBase,
+  width: '30vw',
+  margin: '100px',
+  '@media': mobileCard,
+})
 
 export const content2 = style({
+  ...contentBase,
   width: '30vw',
-  height: '100%',
-  display: 'flex',
-  borderRadius: '10px',
   marginLeft: '30%',
-  backgroundColor: vars.colors.primary,
-  boxShadow: vars.shadow['2x'],
-  '@media': {
-    'screen and (max-width: 600px)': {
-      width: '70vw',
-      margin: '85px',
-    },
-  }
+  '@media': mobileCard,
 })
 
 export const content3 = style({
+  ...contentBase,
   width: '30vw',
-  height: '100%',
-  display: 'flex',
-  borderRadius: '10px',
   margin: '100px',
-  backgroundColor: vars.colors.primary,
-  boxShadow: vars.shadow['2x'],
-  '@media': {
-    'screen and (max-width: 600px)': {
-      width: '70vw',
-      margin: '40px',
-    },
-  }
+  '@media': mobileCard,
 })
 
 export const content4 = style({
+  ...contentBase,
   width: '30vw',
-  height: '100%',
-  display: 'flex',
-  borderRadius: '10px',
   marginLeft: '45%',
-  backgroundColor: vars.colors.primary,
-  boxShadow: vars.shadow['2x'],
-  '@media': {
-    'screen and (max-width: 600px)': {
-      width: '75vw',
-      margin: '80px',
-    },
-  }})
-
-
-export const content5 = style({
-  width: '30vw',
-  height: '100%',
-  display: 'flex',
-  borderRadius: '10px',
-  margin: '100px',
-  backgroundColor: vars.colors.primary,
-  boxShadow: vars.shadow['2x'],
-  '@media': {
-    'screen and (max-width: 600px)': {
-      width: '75vw',
-      margin: '40px',
-    },
-  }
+  '@media': mobileCard,
 })
 
-
+export const content5 = style({
+  ...contentBase,
+  width: '30vw',
+  margin: '100px',
+  '@media': mobileCard,
+})
 
 export const p = style({
   textAlign: 'left',

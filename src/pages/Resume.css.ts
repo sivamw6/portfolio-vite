@@ -1,8 +1,8 @@
-import { style, keyframes } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 import { vars } from '../styles/themes.css'; 
 
 export const resume = style({
-  width: '90vw',
+  width: 'calc(100vw - 180px)',
   height: '100%',
   minHeight: '100vh',
   marginLeft: '180px',
@@ -76,6 +76,20 @@ export const rightColumn = style({
   },
 });
 
+
+export const button = style({
+  border: 'none',
+  padding: vars.space['2x'],
+  borderRadius: vars.borderRadius['2x'],
+  boxShadow: vars.shadow['3x'],
+  backgroundColor: 'var(--primary-color, defaultColor)',
+  color: vars.colors.complementary,
+  cursor: 'pointer',
+  textDecoration: 'none',
+  ':hover': {
+    boxShadow: vars.shadow['2x'],
+  },
+});
 
 export const buttonContainer = style({
   width: '50%',

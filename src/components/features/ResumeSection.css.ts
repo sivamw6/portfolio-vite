@@ -2,6 +2,10 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '../../styles/themes.css'; 
 
 
+export const resumeSection = style({
+  width: '100%',
+});
+
 export const sectionTitle = style({
   fontSize: '2rem',
   color: vars.colors.grey400,

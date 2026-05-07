@@ -54,9 +54,6 @@ export const projectImg = style({
   },
 });
 
-export const projectImgReflect = style({
-  display: 'none', 
-});
 
 export const info = style({
   display: 'flex',

@@ -21,6 +21,10 @@ export const resumeCard = style({
   }
 });
 
+export const resumeContent = style({
+  flex: 1,
+});
+
 export const resumeYear = style({
   minWidth: '80px',
   fontWeight: 'bold',

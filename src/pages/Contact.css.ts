@@ -1,8 +1,8 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../styles/themes.css'; 
+import { vars } from '../styles/themes.css';
 
 export const contact = style({
-  width: '90vw',
+  width: 'calc(100vw - 180px)',
   minHeight: '100vh',
   marginLeft: "180px",
   marginBottom: '100px',
@@ -24,7 +24,6 @@ export const contact = style({
     },
   },
 });
-
 
 export const mapImage = style({
   width: '100%',
@@ -93,38 +92,17 @@ export const rightCol = style({
   '@media': {
     'screen and (max-width: 600px)': {
       width: '90vw',
+      minWidth: 'unset',
       marginLeft: '0',
     },
   },
 });
 
-export const content = style({
-  justifyContent: 'center',
-  height: '500px',
-  margin: 'auto',
-  textAlign: 'center',
-  '@media': {
-    'screen and (max-width: 600px)': {
-      margin: '0'
-    },
-  },
-})
-
-export const formBox = style({
-  width: '450px',
-  '@media': {
-    'screen and (max-width: 600px)': {
-      width: '90vw',
-      marginLeft: '0',
-    },
-  },
-})
-
 export const button = style({
   width: '100%',
   border: 'none',
   padding: vars.space['1x'],
-  borderRadius: vars.borderRadius['2x'],  
+  borderRadius: vars.borderRadius['2x'],
   boxShadow: vars.shadow['3x'],
   backgroundColor: 'var(--primary-color, defaultColor)',
   ':hover': {
@@ -135,11 +113,6 @@ export const button = style({
   ':active': {
     boxShadow: vars.shadow['3x'],
   }
-})
-
-export const mapBox = style({
-  width: '450px',
-  margin: '20px',
 })
 
 export const messageBox = style({
@@ -167,4 +140,3 @@ export const formWrapper = style({
   width: '100%',
   minHeight: '400px',
 });
-

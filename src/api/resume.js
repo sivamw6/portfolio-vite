@@ -1,52 +1,35 @@
 export const getResumeData = () => ({
   education: [
     {
-      year: "Jul 2024 – Present",
+      year: "Jul 2024 – Expected Jul 2026",
       title: "Master of Information Technology (Computer Science)",
-      subtitle: "Queensland University of Technology",
+      subtitle: "Queensland University of Technology · Brisbane, QLD",
       description:
-        "Currently studying software architecture, advanced algorithms, data structures, and secure programming practices to build strong foundations for a career in full-stack development.",
+        "GPA: High Distinction average (6.1x / 7.0). Coursework: Data Exploration & Mining, Data Analytics, Software Engineering, Data Structures & Algorithms, System Design. Capstone: Blockchain-based Student Credential Verification System — led UI development using React, integrating backend APIs across three user roles.",
     },
     {
-      year: "Feb 2023 – Dec 2023",
-      title: "Diploma of Web Development",
-      subtitle: "Holmesglen Institute",
+      year: "Jan 2023 – Dec 2023",
+      title: "Diploma of Information Technology (Web Development)",
+      subtitle: "Holmesglen Institute · Moorabbin, VIC",
       description:
-        "Focused on front-end and back-end web technologies, UI/UX design, and agile project development. Created multiple responsive web applications using React and Node.js.",
-    },
-    {
-      year: "Jul 2022 – Dec 2022",
-      title: "Certificate IV in Web-Based Technologies",
-      subtitle: "Holmesglen Institute",
-      description:
-        "Gained foundational knowledge in HTML, CSS, JavaScript, and website deployment. Built and published personal portfolio and team collaboration projects.",
+        "Specialised in full-stack web development using C# / ASP.NET, JavaScript, and React. Capstone: Published react-handy-modal to NPMjs.com as UI/UX lead — a customisable React modal component built with Storybook, Rollup, and GitHub Organisation workflow.",
     },
   ],
   experience: [
     {
-      year: "Jun 2023 – Present",
-      title: "IT Support & Web Assistant (Internship)",
-      subtitle: "Rickpeck Pty Ltd",
+      year: "Jan 2024 – Dec 2024",
+      title: "Web Developer — Volunteer",
+      subtitle: "AusWise (formerly VicWise) · Melbourne, VIC",
       description:
-        "Provided IT troubleshooting and internal system support for an e-commerce team. Assisted with web updates, content integration, and automation tasks.",
-      frontend: "HTML/CSS, JavaScript, Shopify",
-      backend: "Google Apps Script, Zapier",
-    },
-    {
-      year: "Feb 2024 – Present",
-      title: "Volunteer Web Developer",
-      subtitle: "VicWise (Victoria Working International Student Empowerment)",
-      description:
-        "Collaborating with the internal team to redesign the organization’s website, focusing on accessibility, maintainability, and modern layout practices.",
+        "Contributed to the initial build of the organisation's website, supporting layout design and front-end structure. Collaborated with team members to implement UX/UI improvements for a multicultural community audience.",
       frontend: "React, TailwindCSS",
-      backend: "Firebase",
     },
     {
-      year: "Oct 2023 – Present",
-      title: "Volunteer iPad Tutor",
-      subtitle: "Boroondara Community Library",
+      year: "Jul 2023 – Present",
+      title: "IT Support & iPad Tutor — Volunteer",
+      subtitle: "City of Boroondara · Camberwell, VIC",
       description:
-        "Assist community members, particularly older adults, with using iPads and digital tools. Helped improve digital confidence and tech accessibility.",
+        "Provided hands-on tech support to library members, resolving device and software issues with clear, jargon-free communication. Tutored non-technical users on tablets and smartphones across diverse age groups — work recognised in a Channel 7 News feature.",
     },
   ],
 });

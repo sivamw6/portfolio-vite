@@ -1,5 +1,5 @@
 import { style, keyframes } from '@vanilla-extract/css';
-import { vars } from '../styles/themes.css'; 
+import { vars } from '../styles/themes.css';
 
 const ripple = keyframes({
   '0%': { transform: 'scale(0.8)', opacity: 1 },
@@ -14,20 +14,15 @@ const fadeIn = keyframes({
 export const home = style({
   width: '100vw',
   height: '80vh',
+  position: 'relative',
   background: `linear-gradient(to top, ${vars.colors.primary} 0%, var(--primary-color, defaultColor) 180%)`,
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '100vw',
-      height: '100vh',
-      marginLeft: '0',
-      paddingLeft: '0',
+      height: 'auto',
+      minHeight: '100vh',
+      paddingBottom: '40px',
     },
   },
-})
-
-export const content = style({
-  width: '100%',
-  position: 'relative',
 })
 
 export const flexContainer = style({
@@ -42,12 +37,11 @@ export const flexContainer = style({
     'screen and (max-width: 600px)': {
       flexDirection: 'column',
       gap: '20px',
-      marginRight: 0,
       marginLeft: '0',
+      paddingTop: '60px',
     },
   },
 });
-
 
 export const circle = style({
   width: '400px',
@@ -57,14 +51,14 @@ export const circle = style({
   filter: 'blur(3px)',
   transition: 'filter 0.5s ease-in-out',
   position: 'relative',
+  flexShrink: 0,
   ":hover": {
     filter: 'blur(0px)'
   },
   '@media': {
     'screen and (max-width: 600px)': {
-      width: '300px',
-      height: '300px',
-      
+      width: '220px',
+      height: '220px',
     },
   },
 });
@@ -79,7 +73,6 @@ export const circleBefore = style({
   backgroundColor: 'inherit',
   animation: `${ripple} 3s linear infinite`,
 });
-
 
 export const img = style({
   width: '100%',
@@ -98,32 +91,28 @@ export const text = style({
   top: '30vh',
   left: '25vw',
   textAlign: 'center',
-  color: vars.colors.complementary  ,
+  color: vars.colors.complementary,
   padding: '20px',
   margin: '0 auto',
-  maxWidth: '600px', 
-  '@media': {
-    'screen and (max-width: 600px)': {
-      padding: '10px',
-      fontSize: '90%',
-      top: '20vh',
-    },
-  },
+  maxWidth: '600px',
   opacity: "0",
   animation: `${fadeIn} 2s ease forwards`,
-  animationDelay: '1s', 
+  animationDelay: '1s',
+  '@media': {
+    'screen and (max-width: 600px)': {
+      position: 'static',
+      padding: '10px',
+      fontSize: '90%',
+      textAlign: 'center',
+      width: '100%',
+    },
+  },
 });
 
-// Parent container style
-export const letterAnimation = style({
-  // Styles for the container of the letters (h1, p, etc.)
-  // Add any necessary styles here
-});
+export const letterAnimation = style({});
 
-// Child (span) element style
 export const letterSpan = style({
   opacity: 0,
   animation: `${fadeIn} 0.3s ease forwards`,
-  display: 'inline-block', // Necessary for individual letter animation
-  // Add additional styles if needed
+  display: 'inline-block',
 });

@@ -1,18 +1,15 @@
 import * as styles from './About.css'
 import SlideInAnimation from '../components/features/SlideInAnimation'
 
-/**
- * About page component describing the developer&apos;s background, skills, and philosophy.
- */
 function About() {
   return (
-    <div className={styles.about}> 
+    <div className={styles.about}>
       <h1 className="ms-5">About Me</h1>
 
       <SlideInAnimation>
         <div className={styles.content1}>
           <p className={styles.p}>
-            Hi! I&apos;m Mavis Wang — a web developer and IT enthusiast based in Australia. I&apos;m currently pursuing a Master of Information Technology (Computer Science) at Queensland University of Technology, where I&apos;m expanding my expertise in software design, data structures, and emerging technologies.
+            Hi! I&apos;m Mavis Wang — a final-year Master of IT (Computer Science) student at Queensland University of Technology, graduating in 2026 with a High Distinction average (6.1x / 7.0). I have a strong foundation in software development, data structures, and computer science fundamentals.
           </p>
         </div>
       </SlideInAnimation>
@@ -20,7 +17,7 @@ function About() {
       <SlideInAnimation>
         <div className={styles.content2}>
           <p className={styles.p}>
-            My professional journey began in the tourism industry, but I transitioned into tech to pursue more meaningful, problem-solving work. Since 2023, I&apos;ve worked as an IT Support Specialist at Rickpeck Pty Ltd, helping streamline internal systems and resolve technical challenges efficiently.
+            I&apos;m currently exploring machine learning and AI applications through personal projects — from AI-powered stock monitoring systems using the Gemini API, to a blockchain-based student credential verification platform. I&apos;m drawn to how these technologies can solve real-world problems at scale.
           </p>
         </div>
       </SlideInAnimation>
@@ -28,7 +25,7 @@ function About() {
       <SlideInAnimation>
         <div className={styles.content3}>
           <p className={styles.p}>
-            As a developer, I&apos;m passionate about creating clean, accessible, and intuitive web interfaces. I&apos;ve built projects using modern JavaScript frameworks such as React, Vue, and Angular, and enjoy designing full-stack solutions that are both functional and elegant.
+            As a developer, I work across the full stack with C# / ASP.NET, JavaScript, React, and Python. I&apos;m building my data science toolkit with Pandas, NumPy, and Scikit-learn, and I&apos;ve deployed projects on Vercel, Netlify, and Docker — always aiming for clean, accessible, and maintainable solutions.
           </p>
         </div>
       </SlideInAnimation>
@@ -36,7 +33,7 @@ function About() {
       <SlideInAnimation>
         <div className={styles.content4}>
           <p className={styles.p}>
-            I&apos;m also actively involved in volunteer work — contributing as a Web Developer at VicWise and offering digital support as an iPad Tutor at Boroondara Community Library. These roles allow me to apply my skills in real-world settings while giving back to the community.
+            Beyond coding, I give back to the community as a volunteer Web Developer at AusWise and as an IT Support & iPad Tutor at City of Boroondara — work that has even been featured on Channel 7 News. I believe technology is most meaningful when it empowers people.
           </p>
         </div>
       </SlideInAnimation>
@@ -44,7 +41,7 @@ function About() {
       <SlideInAnimation>
         <div className={styles.content5}>
           <p className={styles.p}>
-            Whether I&apos;m debugging code or mentoring others, I approach every challenge with curiosity and care. I&apos;m continuously improving my technical abilities while working on personal projects, open-source contributions, and hands-on coursework. My goal? To become a developer who blends technical precision with human-centered design.
+            My goal is to grow as a Software and AI Engineer — blending technical depth with real-world impact. Whether building intelligent systems, contributing to large Agile teams, or rapid-prototyping new ideas, I approach every challenge with curiosity, care, and a drive to keep improving.
           </p>
         </div>
       </SlideInAnimation>

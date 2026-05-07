@@ -53,7 +53,7 @@ const Contact = () => {
           <div className={styles.infoRow}>
             <FaEnvelope className={styles.icon} />
             <a
-              href="maviswang.6@gmail.com"
+              href="mailto:maviswang.6@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.iconLink}
@@ -75,7 +75,7 @@ const Contact = () => {
           <div className={styles.infoRow}>
             <FaLinkedin className={styles.icon} />
             <a
-              href="https://linkedin.com/in/你的帳號"
+              href="https://www.linkedin.com/in/mavis-wang-64019b277/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.iconLink}
